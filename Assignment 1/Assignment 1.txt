@@ -1,4 +1,10 @@
 Assignment 1: Color Quantization and Connected Component Analysis
 Part 1: Color Quantization:
 
-Color quantization is the process of reducing the number of colors used in an image while trying to maintain the visual appearance of the original image. In general, it is a form of cluster analysis, if each RGB color value is consider
+Color quantization is the process of reducing the number of colors used in an image while trying to maintain the visual appearance of the original image. In general, it is a form of cluster analysis, if each RGB color value is considered as a coordinate triple in the 3D colorspace.  The following example shows an RGB image (~16 Million possible colors) quantized using 2,4,8,16,32 colors.
+
+
+
+In your first assignment, you will be working on a Python implementation of basic image processing operations and color quantization techniques. 
+
+Y

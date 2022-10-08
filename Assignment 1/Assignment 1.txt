@@ -1,0 +1,4 @@
+Assignment 1: Color Quantization and Connected Component Analysis
+Part 1: Color Quantization:
+
+Color quantization is the process of reducing the number of colors used in an image while trying to maintain the visual appearance of the original image. In general, it is a form of cluster analysis, if each RGB color value is consider

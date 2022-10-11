@@ -7,4 +7,4 @@ Color quantization is the process of reducing the number of colors used in an im
 
 In your first assignment, you will be working on a Python implementation of basic image processing operations and color quantization techniques. 
 
-Y
+You are going to write the function "quantize(img, K)" that takes two inputs and returns a single output. The first input is an RGB formatted image and the second one is the number of colors (K) in an image we aim to quantize. The function is supposed to calculate the quantized version of the image using the following met

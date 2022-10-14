@@ -11,4 +11,6 @@ You are going to write the function "quantize(img, K)" that takes two inputs and
 
 Convert input image to a matrix of pixels. Depending on your image size your matrix should be of size [height*width,3]
 Pick K initial colors to begin quantization. Use the following methods to initialize your algorithm
-Choose initial color centers manually, by clicking on the image: Using matp
+Choose initial color centers manually, by clicking on the image: Using matplotlib librarys pyplot.ginput function, choose k points. Example code snippet to interactively select points from an image is provided at the end of this document.
+Choose initial color centers randomly. Pick color centers randomly using numpys numpy.random.uniform function.
+Using your own implementation of the k-means al

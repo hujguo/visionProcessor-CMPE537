@@ -15,4 +15,6 @@ Choose initial color centers manually, by clicking on the image: Using matplotli
 Choose initial color centers randomly. Pick color centers randomly using numpys numpy.random.uniform function.
 Using your own implementation of the k-means algorithm, cluster your color matrix and find K clusters and cluster centers. You may limit the maximum number of iterations to 10 or a suitable number depending on the size of your images.
 Generate an output image. In the output image, each pixel should have the color of the cluster-center that pixel has been assigned to.
-Once yo
+Once you are done with your image processing pipeline, you are going to experiment on the following images and present 2,4,8,16 and 32 color quantized versions of these images with both initialization methods in your report.
+
+Bonus - 1: Try using K-means using an uniform color coordinate system (Lab color

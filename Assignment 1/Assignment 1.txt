@@ -13,4 +13,6 @@ Convert input image to a matrix of pixels. Depending on your image size your mat
 Pick K initial colors to begin quantization. Use the following methods to initialize your algorithm
 Choose initial color centers manually, by clicking on the image: Using matplotlib librarys pyplot.ginput function, choose k points. Example code snippet to interactively select points from an image is provided at the end of this document.
 Choose initial color centers randomly. Pick color centers randomly using numpys numpy.random.uniform function.
-Using your own implementation of the k-means al
+Using your own implementation of the k-means algorithm, cluster your color matrix and find K clusters and cluster centers. You may limit the maximum number of iterations to 10 or a suitable number depending on the size of your images.
+Generate an output image. In the output image, each pixel should have the color of the cluster-center that pixel has been assigned to.
+Once yo

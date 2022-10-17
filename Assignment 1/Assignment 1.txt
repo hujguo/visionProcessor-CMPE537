@@ -17,4 +17,8 @@ Using your own implementation of the k-means algorithm, cluster your color matri
 Generate an output image. In the output image, each pixel should have the color of the cluster-center that pixel has been assigned to.
 Once you are done with your image processing pipeline, you are going to experiment on the following images and present 2,4,8,16 and 32 color quantized versions of these images with both initialization methods in your report.
 
-Bonus - 1: Try using K-means using an uniform color coordinate system (Lab color
+Bonus - 1: Try using K-means using an uniform color coordinate system (Lab colorspace)
+
+Part 2: Connected Component Analysis:
+
+In this assignment, we are going to be implementing a connected component analysis algorithm. In the connected component analysis, we begin with a color based thresholding of the image. Following noise removal with morphological operations, we are left with an i

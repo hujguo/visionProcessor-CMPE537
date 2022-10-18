@@ -21,4 +21,7 @@ Bonus - 1: Try using K-means using an uniform color coordinate system (Lab color
 
 Part 2: Connected Component Analysis:
 
-In this assignment, we are going to be implementing a connected component analysis algorithm. In the connected component analysis, we begin with a color based thresholding of the image. Following noise removal with morphological operations, we are left with an i
+In this assignment, we are going to be implementing a connected component analysis algorithm. In the connected component analysis, we begin with a color based thresholding of the image. Following noise removal with morphological operations, we are left with an image that contains connected and disconnected regions. We can count the number of distinct connected regions to determine the number of distinct objects on an image such as the number of birds in the below image. 
+Image for postImage for post
+
+In order to perform connected component analysis and count the number of ob

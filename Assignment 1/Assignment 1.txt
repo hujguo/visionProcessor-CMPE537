@@ -25,4 +25,6 @@ In this assignment, we are going to be implementing a connected component analys
 Image for postImage for post
 
 In order to perform connected component analysis and count the number of objects in the images given below, you should implement the countConnectedComponents(img,threshold) function. The method takes an image and a threshold value as input and returns the number of objects in the image as output. The methods you should implement can be described as follows:
-Read the given image and apply a thresholding function. The o
+Read the given image and apply a thresholding function. The output of this function should give you a binary image where pixels have a value of [0,1] instead of [0-255].
+If needed apply morphological erosion or dilation to clean salt&pepper noise.
+Implement connected components analysis with 8 connected neighborhoods for each pixel. Traverse the image, going over a

@@ -35,4 +35,8 @@ Once you are done with your connected components analysis pipeline optimize the 
 Development Environment
 Installing Python
 
-Throughout the semester, we will be using Python 3 as our programming language. We recommend that you use Conda and PyCharm Professional Edition to s
+Throughout the semester, we will be using Python 3 as our programming language. We recommend that you use Conda and PyCharm Professional Edition to setup your development environment and install the necessary libraries. 
+
+You can obtain from Miniconda. Follow the installation instructions for your operating system. Once the installation is complete, navigate to your installation directory on a command line / terminal and use the following commands to install the necessary libraries as follows:
+
+cd /path

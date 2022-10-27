@@ -39,4 +39,10 @@ Throughout the semester, we will be using Python 3 as our programming language. 
 
 You can obtain from Miniconda. Follow the installation instructions for your operating system. Once the installation is complete, navigate to your installation directory on a command line / terminal and use the following commands to install the necessary libraries as follows:
 
-cd /path
+cd /path/to/your/miniconda/installation/bin/
+conda install opencv matplotlib numpy
+If you have added the miniconda/bin directory to your system path, you can test your installation by typing the following:
+
+python
+>> import cv2
+If there are no messages like 'module not found error' no module named 'cv2', your installation was 

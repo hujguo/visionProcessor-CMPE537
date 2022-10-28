@@ -45,4 +45,10 @@ If you have added the miniconda/bin directory to your system path, you can test 
 
 python
 >> import cv2
-If there are no messages like 'module not found error' no module named 'cv2', your installation was 
+If there are no messages like 'module not found error' no module named 'cv2', your installation was successful. If you get the error message, please checkout OpenCV for Python.
+
+Installing an IDE
+
+We recommend that you use Visual Studio Code or  PyCharm as your IDE for ease of debugging. You are free to use any IDE of your choice. Below we explain the installation process of pycharm.
+
+Obtain PyCharm Professio

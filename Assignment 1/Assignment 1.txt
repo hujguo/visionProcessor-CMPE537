@@ -55,4 +55,7 @@ Obtain PyCharm Professional Edition for free by first signing up as a student at
 
 Login to your new PyCharm account to obtain your username and password, and use them to register your IDE.
 
-Run PyCharm, open a new pr
+Run PyCharm, open a new project. While creating the project, select the python environment you created for this project.
+
+Deliverables
+Project report (pdf & tex): A maximum two page pdf report file which includes small versions (resize images so that 4-5 of them should fit a single line) of all the requested figures, images and des

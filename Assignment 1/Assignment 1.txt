@@ -59,4 +59,9 @@ Run PyCharm, open a new project. While creating the project, select the python e
 
 Deliverables
 Project report (pdf & tex): A maximum two page pdf report file which includes small versions (resize images so that 4-5 of them should fit a single line) of all the requested figures, images and descriptions of the methods that you have implemented. Comment on the results and elaborate on your conclusions.  Do not print any source code in your report. 
-Source code (py files): Submit all of the functions you have implemented for the assignment in two separate files: (hw1_quantization_name_surname.py) and (hw2_qua
+Source code (py files): Submit all of the functions you have implemented for the assignment in two separate files: (hw1_quantization_name_surname.py) and (hw2_quantization_name_surname.py).  Your submitted codes should have a "__main__" method for us to test your code without typing in any external arguments.
+
+For questions & comments please email alp.kindiroglu@boun.edu.tr
+
+
+WARNING! Submit all files as one zip file titled (hw1_name_surname.zip). Please send files in correct 

@@ -58,4 +58,5 @@ Login to your new PyCharm account to obtain your username and password, and use 
 Run PyCharm, open a new project. While creating the project, select the python environment you created for this project.
 
 Deliverables
-Project report (pdf & tex): A maximum two page pdf report file which includes small versions (resize images so that 4-5 of them should fit a single line) of all the requested figures, images and des
+Project report (pdf & tex): A maximum two page pdf report file which includes small versions (resize images so that 4-5 of them should fit a single line) of all the requested figures, images and descriptions of the methods that you have implemented. Comment on the results and elaborate on your conclusions.  Do not print any source code in your report. 
+Source code (py files): Submit all of the functions you have implemented for the assignment in two separate files: (hw1_quantization_name_surname.py) and (hw2_qua

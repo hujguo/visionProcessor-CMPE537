@@ -64,4 +64,10 @@ Source code (py files): Submit all of the functions you have implemented for the
 For questions & comments please email alp.kindiroglu@boun.edu.tr
 
 
-WARNING! Submit all files as one zip file titled (hw1_name_surname.zip). Please send files in correct 
+WARNING! Submit all files as one zip file titled (hw1_name_surname.zip). Please send files in correct format. Use zip for packaging, do not use rar, 7z etc. If you are not able to upload your assignment files to Moodle, submit a cloud storage (Dropbox / google drive etc) link of the compressed package.
+
+
+Email address: alp.kindiroglu@boun.edu.tr
+
+Code Snippet For Interactively Selecting Points
+from PIL import Im

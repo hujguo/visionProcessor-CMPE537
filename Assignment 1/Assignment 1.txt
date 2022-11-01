@@ -70,4 +70,13 @@ WARNING! Submit all files as one zip file titled (hw1_name_surname.zip). Please 
 Email address: alp.kindiroglu@boun.edu.tr
 
 Code Snippet For Interactively Selecting Points
-from PIL import Im
+from PIL import Image
+from matplotlib import pyplot as plt                      
+plt.imshow(im)
+points = plt.ginput(3,show_clicks=True)
+print("clicked", points)
+im = Image.open("frog2.jpg")
+
+
+                        
+Note: If using pycharm you may need to do the following if ginput does not work. Under Settings => Tools 

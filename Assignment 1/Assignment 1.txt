@@ -79,4 +79,4 @@ im = Image.open("frog2.jpg")
 
 
                         
-Note: If using pycharm you may need to do the following if ginput does not work. Under Settings => Tools 
+Note: If using pycharm you may need to do the following if ginput does not work. Under Settings => Tools => Python Scientific Uncheck the (only) box "Show plots in toolwindow". Future plots should appear "normally" and not in SciView.

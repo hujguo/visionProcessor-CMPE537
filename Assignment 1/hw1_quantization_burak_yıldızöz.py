@@ -182,3 +182,26 @@ if __name__ == '__main__CHANGE-THE-OTHER-ONE':
     plt.set_cmap('gray')
     plt.imshow(gray)
     plt.title('Grayscale Image')
+    plt.figure()
+    plt.imshow(bw)
+    plt.title('Thresholded Image')
+    # find connected components
+    comps = components(bw, debug=True)
+    for label in comps:
+        print('label:', label[0], 'number of components:', len(label[1]))
+        for c in label[1]:
+            print('There are', c[1], 'pixels at component with point', c[0])
+    # draw results
+    colorlist = color_list(len(comps[1][1]))
+    drawn = np.zeros([bw.shape[0], bw.shape[1], 3], np.uint8)
+    for i in range(len(colorlist)):
+        pt = comps[1][1][i][0]
+        mask = np.zeros(bw.shape, bool)
+        mask[pt] = True
+        mask = grow_region(mask, bw)
+        drawn[mask] = colorlist[i]
+    plt.figure()
+    plt.imshow(drawn)
+    plt.title('Connected Components: %d' % (len(comps[1][1])))
+    # results are displayed here
+    plt.show()

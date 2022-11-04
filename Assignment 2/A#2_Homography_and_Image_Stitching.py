@@ -8,4 +8,10 @@ import random
 from operator import sub
 
 ################################################################################
-# Path to sets of
+# Path to sets of images                                                       #
+################################################################################
+
+PREPATH = 'images/'
+IMNAMES = {
+    'cmpe_building': ['left_2', 'left_1', 'middle', 'right_1', 'right_2'],
+    'north_campus': ['left_2', 'left_1', '

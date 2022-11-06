@@ -26,4 +26,12 @@ RESDIR = 'results/'
 
 METHODS = ['left-to-right', 'middle-out', 'first-out-then-middle']
 
-#################################
+################################################################################
+# Save and load data                                                           #
+################################################################################
+
+def read_imgs(dataset):
+    assert(IMNAMES.get(dataset))
+    # read images
+    imgs = []
+    for name in

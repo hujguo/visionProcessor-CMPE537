@@ -34,4 +34,13 @@ def read_imgs(dataset):
     assert(IMNAMES.get(dataset))
     # read images
     imgs = []
-    for name in
+    for name in IMNAMES[dataset]:
+        path = PREPATH + dataset + '/' + name + EXT
+        img = cv.imread(path, cv.IMREAD_COLOR)
+        img = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+        imgs.append(img)
+    return imgs
+
+# compress data
+# no need to provide corresponding pairs for (j, i) where j > i
+def save_points(dataset

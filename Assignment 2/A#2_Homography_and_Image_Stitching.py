@@ -52,4 +52,11 @@ def save_points(dataset, points):
 
 # corresponding pointss for (j, i) where j > i are derived from (i, j) pair
 def load_points(dataset):
-    N = len(IMNAMES.
+    N = len(IMNAMES.get(dataset))
+    assert(N > 0)
+    points = np.load(NPYDIR + dataset + '.npy', allow_pickle=True)
+    assert(len(points) == N)
+    # fill in the blanks (we know A to B, obtain B to A)
+    for i in range(len(points)):
+        for j in range(i + 1, len(points)):
+            points[j][i] =

@@ -43,4 +43,13 @@ def read_imgs(dataset):
 
 # compress data
 # no need to provide corresponding pairs for (j, i) where j > i
-def save_points(dataset
+def save_points(dataset, points):
+    N = len(IMNAMES.get(dataset))
+    assert(N > 0)
+    assert(len(points) == N)
+    os.makedirs(NPYDIR, exist_ok=True)
+    np.save(NPYDIR + dataset, np.array(points, dtype=object), allow_pickle=True)
+
+# corresponding pointss for (j, i) where j > i are derived from (i, j) pair
+def load_points(dataset):
+    N = len(IMNAMES.

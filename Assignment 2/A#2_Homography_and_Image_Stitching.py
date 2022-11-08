@@ -59,4 +59,14 @@ def load_points(dataset):
     # fill in the blanks (we know A to B, obtain B to A)
     for i in range(len(points)):
         for j in range(i + 1, len(points)):
-            points[j][i] =
+            points[j][i] = [points[i][j][1], points[i][j][0]]
+    return points
+
+def save_image(name, img):
+    os.makedirs(RESDIR, exist_ok=True)
+    if cv.imwrite(RESDIR + name + EXT, cv.cvtColor(img, cv.COLOR_RGB2BGR)):
+        print('Saved to', RESDIR + name + EXT)
+
+def save_figure(fig, name):
+    plt.figure(fig.number)
+    mng = plt.get_c

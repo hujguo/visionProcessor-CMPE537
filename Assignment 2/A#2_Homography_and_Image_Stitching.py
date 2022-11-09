@@ -69,4 +69,12 @@ def save_image(name, img):
 
 def save_figure(fig, name):
     plt.figure(fig.number)
-    mng = plt.get_c
+    mng = plt.get_current_fig_manager()
+    mng.full_screen_toggle()
+    fig.show()
+    fig.savefig(RESDIR + name + '.png')
+    mng.full_screen_toggle()
+    print('Saved to ' + RESDIR + name + '.png')
+
+################################################################################
+# Corresponding points between images                         

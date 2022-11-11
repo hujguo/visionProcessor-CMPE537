@@ -77,4 +77,14 @@ def save_figure(fig, name):
     print('Saved to ' + RESDIR + name + '.png')
 
 ################################################################################
-# Corresponding points between images                         
+# Corresponding points between images                                          #
+################################################################################
+
+def select_points(img, K):
+    fig = plt.figure()
+    plt.imshow(img)
+    x = plt.ginput(K)   # (x, y) format
+    plt.close(fig)
+    return list(tuple(map(int, tup)) for tup in x)
+
+def cv_mouse_click(event, x, y, flags, 

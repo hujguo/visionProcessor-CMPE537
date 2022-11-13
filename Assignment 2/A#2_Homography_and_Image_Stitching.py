@@ -87,4 +87,14 @@ def select_points(img, K):
     plt.close(fig)
     return list(tuple(map(int, tup)) for tup in x)
 
-def cv_mouse_click(event, x, y, flags, 
+def cv_mouse_click(event, x, y, flags, param):
+    if event == cv.EVENT_LBUTTONDOWN:
+        pos = (x, y)    # cv2 format
+        if type(param) is list:
+            param.append(pos)
+
+def cv_select_points(img, K, winname, param=[]):
+    assert(type(param) is list)
+    colors = color_list(K)
+    cv.namedWindow(winname)
+    cv.setMouseCallback(

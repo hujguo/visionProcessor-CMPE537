@@ -97,4 +97,11 @@ def cv_select_points(img, K, winname, param=[]):
     assert(type(param) is list)
     colors = color_list(K)
     cv.namedWindow(winname)
-    cv.setMouseCallback(
+    cv.setMouseCallback(winname, cv_mouse_click, param)
+    while True:
+        try:
+            cv.imshow(winname, mark_points(img, param, colors, bgr=True))
+            ch = cv.waitKey(delay=100) & 0xFF
+        # in case of an error, terminate the thread
+        except Exception as e:
+            print('Exception occu

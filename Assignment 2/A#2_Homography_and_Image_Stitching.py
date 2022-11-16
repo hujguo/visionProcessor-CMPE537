@@ -113,4 +113,13 @@ def cv_select_points(img, K, winname, param=[]):
             if len(param) is not 0:
                 print('Clear the points first!', flush=True)
             else:
-           
+                print('Skipping', winname, flush=True)
+                break
+        # press BACKSPACE to delete the last selected point
+        elif ch is ord('\b'):
+            if len(param):
+                param.pop()
+        # press SPACE when you are done
+        elif ch is ord(' '):
+            if len(param) is K:
+ 

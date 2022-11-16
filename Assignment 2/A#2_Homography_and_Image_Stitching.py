@@ -104,4 +104,13 @@ def cv_select_points(img, K, winname, param=[]):
             ch = cv.waitKey(delay=100) & 0xFF
         # in case of an error, terminate the thread
         except Exception as e:
-            print('Exception occu
+            print('Exception occured in', winname)
+            print(e, flush=True)
+            cv.destroyWindow(winname)
+            exit(1)
+        # press ESC to skip matching
+        if ch is 27:
+            if len(param) is not 0:
+                print('Clear the points first!', flush=True)
+            else:
+           

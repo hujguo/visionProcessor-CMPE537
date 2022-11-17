@@ -131,4 +131,9 @@ def cv_select_points(img, K, winname, param=[]):
 
 def select_pair(img1, img2, K, win1, win2, pts1, pts2, print_help=True):
     if print_help:
-        pri
+        print('Select the corresponding %d points' %(K),
+              'in each image in the same order')
+        print('Press BACKSPACE to delete the last selected point')
+        print('Press SPACE when you are done', flush=True)
+    futures = [None, None]
+    with concurrent.futures.ThreadPoolExecutor() as execut

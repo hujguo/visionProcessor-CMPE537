@@ -122,4 +122,13 @@ def cv_select_points(img, K, winname, param=[]):
         # press SPACE when you are done
         elif ch is ord(' '):
             if len(param) is K:
- 
+                break
+            else:
+                print('There should be', K, 'selected points in', winname,
+                      'whereas it is', len(param), flush=True)
+    cv.destroyWindow(winname)
+    return np.array(param)
+
+def select_pair(img1, img2, K, win1, win2, pts1, pts2, print_help=True):
+    if print_help:
+        pri

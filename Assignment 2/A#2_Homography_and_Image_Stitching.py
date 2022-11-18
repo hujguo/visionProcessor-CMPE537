@@ -136,4 +136,12 @@ def select_pair(img1, img2, K, win1, win2, pts1, pts2, print_help=True):
         print('Press BACKSPACE to delete the last selected point')
         print('Press SPACE when you are done', flush=True)
     futures = [None, None]
-    with concurrent.futures.ThreadPoolExecutor() as execut
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        futures[0] = executor.submit(cv_select_points, img1, K, win1, pts1)
+        futures[1] = executor.submit(cv_select_points, img2, K, win2, pts2)
+    return [futures[0].result(), futures[1].result()]
+
+def select_corresponding_points(dataset, K):
+    assert(K >= 4)
+    imgs = read_imgs(dataset)
+    res

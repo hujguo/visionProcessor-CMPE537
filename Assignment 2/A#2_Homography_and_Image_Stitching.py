@@ -144,4 +144,10 @@ def select_pair(img1, img2, K, win1, win2, pts1, pts2, print_help=True):
 def select_corresponding_points(dataset, K):
     assert(K >= 4)
     imgs = read_imgs(dataset)
-    res
+    result = [[None for j in range(len(imgs))]
+              for i in range(len(imgs))]
+    print('Select the corresponding %d points' %(K),
+          'in each image in the same order')
+    print('Press ESC to skip matching that pair')
+    print('Press BACKSPACE to delete the last selected point')
+    print('Press 

@@ -150,4 +150,11 @@ def select_corresponding_points(dataset, K):
           'in each image in the same order')
     print('Press ESC to skip matching that pair')
     print('Press BACKSPACE to delete the last selected point')
-    print('Press 
+    print('Press SPACE when you are done', flush=True)
+    for i in range(len(imgs) - 1):
+        for j in range(i + 1, len(imgs)):
+            win1 = IMNAMES[dataset][i]
+            win2 = IMNAMES[dataset][j]
+            img1 = cv.cvtColor(imgs[i], cv.COLOR_RGB2BGR)
+            img2 = cv.cvtColor(imgs[j], cv.COLOR_RGB2BGR)
+   

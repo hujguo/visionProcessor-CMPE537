@@ -157,4 +157,8 @@ def select_corresponding_points(dataset, K):
             win2 = IMNAMES[dataset][j]
             img1 = cv.cvtColor(imgs[i], cv.COLOR_RGB2BGR)
             img2 = cv.cvtColor(imgs[j], cv.COLOR_RGB2BGR)
-   
+            print('Correspondence between', win1, 'and', win2, flush=True)
+            result[i][j] = select_pair(img1, img2, K, win1, win2,
+                                       [], [], print_help=False)
+            # The following line is performed while loading data
+    

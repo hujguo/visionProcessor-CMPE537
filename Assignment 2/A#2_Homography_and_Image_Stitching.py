@@ -161,4 +161,11 @@ def select_corresponding_points(dataset, K):
             result[i][j] = select_pair(img1, img2, K, win1, win2,
                                        [], [], print_help=False)
             # The following line is performed while loading data
-    
+            # result[j][i] = [result[i][j][1], result[i][j][0]]
+    return result
+
+def random_points(size, K):
+    x = np.random.uniform(low=[0,0], high=[size[1], size[0]], size=(K, 2))
+    return list(tuple(map(int, arr)) for arr in x)
+
+#######################################################################

@@ -168,4 +168,10 @@ def random_points(size, K):
     x = np.random.uniform(low=[0,0], high=[size[1], size[0]], size=(K, 2))
     return list(tuple(map(int, arr)) for arr in x)
 
-#######################################################################
+################################################################################
+# Homography calculation                                                       #
+################################################################################
+
+def computeH(src_pts, dst_pts, max_iter=1000, inlier_thr=5):
+    assert(len(src_pts) >= 4)
+    assert(len(dst_pts) == len(src_pts)

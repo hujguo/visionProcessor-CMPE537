@@ -174,4 +174,11 @@ def random_points(size, K):
 
 def computeH(src_pts, dst_pts, max_iter=1000, inlier_thr=5):
     assert(len(src_pts) >= 4)
-    assert(len(dst_pts) == len(src_pts)
+    assert(len(dst_pts) == len(src_pts))
+    # apply RANSAC algorithm
+    best_inlier = 0     # number of points that are below threshold
+    best_dist = float('inf')
+    for _ in range(max_iter):
+        # pick 4 random point pairs
+        idx = random.sample(range(len(src_pts)), 4)
+        # calculate homography matrix

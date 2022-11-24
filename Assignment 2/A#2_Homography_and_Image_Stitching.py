@@ -182,3 +182,9 @@ def computeH(src_pts, dst_pts, max_iter=1000, inlier_thr=5):
         # pick 4 random point pairs
         idx = random.sample(range(len(src_pts)), 4)
         # calculate homography matrix
+        x1, x2, x3, x4 = ((src_pts[i][0], dst_pts[i][0]) for i in idx)
+        y1, y2, y3, y4 = ((src_pts[i][1], dst_pts[i][1]) for i in idx)
+        P = np.array([
+            [-x1[0], -y1[0], -1, 0, 0, 0, x1[0] * x1[1], y1[0] * x1[1], x1[1]],
+            [0, 0, 0, -x1[0], -y1[0], -1, x1[0] * y1[1], y1[0] * y1[1], y1[1]],
+          

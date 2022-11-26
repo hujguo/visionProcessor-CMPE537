@@ -198,3 +198,8 @@ def computeH(src_pts, dst_pts, max_iter=1000, inlier_thr=5):
         H = Vt[-1].reshape(3, 3)
         H /= H[2][2]
         # see how good the matches are
+        pts = transform(src_pts, H)
+        distvec = np.sqrt(np.sum(np.square(pts - dst_pts), axis=1))
+        dist = np.mean(distvec[distvec < inlier_thr])
+        inlier = np.count_nonzero(distvec < inlier_thr)
+        if inlier > best_inlier or (inlier is best_inlier and dist < best_dist

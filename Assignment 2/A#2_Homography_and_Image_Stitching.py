@@ -202,4 +202,12 @@ def computeH(src_pts, dst_pts, max_iter=1000, inlier_thr=5):
         distvec = np.sqrt(np.sum(np.square(pts - dst_pts), axis=1))
         dist = np.mean(distvec[distvec < inlier_thr])
         inlier = np.count_nonzero(distvec < inlier_thr)
-        if inlier > best_inlier or (inlier is best_inlier and dist < best_dist
+        if inlier > best_inlier or (inlier is best_inlier and dist < best_dist):
+            best_inlier = inlier
+            best_dist = dist
+            best_H = H
+    return best_H
+
+################################################################################
+# Transformation functions                                                     #
+###########################################

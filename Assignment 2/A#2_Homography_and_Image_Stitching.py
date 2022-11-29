@@ -210,4 +210,12 @@ def computeH(src_pts, dst_pts, max_iter=1000, inlier_thr=5):
 
 ################################################################################
 # Transformation functions                                                     #
-###########################################
+################################################################################
+
+def transform(src_pts, H):
+    # src = [src_pts 1]
+    src = np.pad(src_pts, [(0, 0), (0, 1)], constant_values=1)
+    # pts = H * src
+    pts = np.dot(H, src.T).T
+    # normalize and throw z=1
+    pts = (pts / pts[:,-1].reshape(-1, 1))

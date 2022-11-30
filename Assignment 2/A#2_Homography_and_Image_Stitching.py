@@ -218,4 +218,13 @@ def transform(src_pts, H):
     # pts = H * src
     pts = np.dot(H, src.T).T
     # normalize and throw z=1
-    pts = (pts / pts[:,-1].reshape(-1, 1))
+    pts = (pts / pts[:,-1].reshape(-1, 1))[:, 0:2]
+    return pts
+
+# find the ROI of a transformation result
+def warpRect(rect, H):
+    x, y, w, h = rect
+    corners = [[x, y], [x, y + h - 1], [x + w - 1, y], [x + w - 1, y + h - 1]]
+    extremum = transform(corners, H)
+    minx, miny = np.min(extremum[:,0]), np.min(extremum[:,1])
+    maxx,

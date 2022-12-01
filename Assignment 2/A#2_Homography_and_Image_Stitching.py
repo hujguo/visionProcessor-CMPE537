@@ -227,4 +227,15 @@ def warpRect(rect, H):
     corners = [[x, y], [x, y + h - 1], [x + w - 1, y], [x + w - 1, y + h - 1]]
     extremum = transform(corners, H)
     minx, miny = np.min(extremum[:,0]), np.min(extremum[:,1])
-    maxx,
+    maxx, maxy = np.max(extremum[:,0]), np.max(extremum[:,1])
+    xo = int(np.floor(minx))
+    yo = int(np.floor(miny))
+    wo = int(np.ceil(maxx - minx))
+    ho = int(np.ceil(maxy - miny))
+    outrect = (xo, yo, wo, ho)
+    return outrect
+
+def size2rect(size):
+    return (0, 0, size[1], size[0])
+
+# homography matrix is translated t

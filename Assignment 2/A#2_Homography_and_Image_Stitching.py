@@ -248,4 +248,14 @@ def coverH(rect, H):
         xpos = int(-x)
     if y < 0:
         ypos = int(-y)
-    # correct the homography matrix so that no point is throw
+    # correct the homography matrix so that no point is thrown out
+    T = np.array([[1, 0, xpos], [0, 1, ypos], [0, 0, 1]])
+    H_corr = T.dot(H)
+    return (H_corr, (xpos, ypos))
+
+# pad image to cover ROI, return the shift amount of origin
+def addBorder(img, rect):
+    top, bottom, left, right = int(0), int(0), int(0), int(0)
+    x, y, w, h = rect
+    tl = (x, y)    
+    

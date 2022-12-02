@@ -238,4 +238,14 @@ def warpRect(rect, H):
 def size2rect(size):
     return (0, 0, size[1], size[0])
 
-# homography matrix is translated t
+# homography matrix is translated to fit in the screen
+def coverH(rect, H):
+    # obtain bounding box of the result
+    x, y, _, _ = warpRect(rect, H)
+    # shift amount to the first quadrant
+    xpos, ypos = int(0), int(0)
+    if x < 0:
+        xpos = int(-x)
+    if y < 0:
+        ypos = int(-y)
+    # correct the homography matrix so that no point is throw

@@ -258,4 +258,14 @@ def addBorder(img, rect):
     top, bottom, left, right = int(0), int(0), int(0), int(0)
     x, y, w, h = rect
     tl = (x, y)    
-    
+    br = (x + w, y + h)
+    if tl[1] < 0:
+        top = -tl[1]
+    if br[1] > img.shape[0]:
+        bottom = br[1] - img.shape[0]
+    if tl[0] < 0:
+        left = -tl[0]
+    if br[0] > img.shape[1]:
+        right = br[0] - img.shape[1]
+    img = cv.copyMakeBorder(img, top, bottom, left, right,
+                           

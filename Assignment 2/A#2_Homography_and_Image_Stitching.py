@@ -268,4 +268,13 @@ def addBorder(img, rect):
     if br[0] > img.shape[1]:
         right = br[0] - img.shape[1]
     img = cv.copyMakeBorder(img, top, bottom, left, right,
-                           
+                            cv.BORDER_CONSTANT, value=[0, 0, 0])
+    orig = (left, top)
+    return img, orig
+
+def check_limits(pts, size):
+    np.clip(pts[:,0], 0, size[1] - 1, pts[:,0])
+    np.clip(pts[:,1], 0, size[0] - 1, pts[:,1])
+    return pts
+
+##################################################################

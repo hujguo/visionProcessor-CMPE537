@@ -283,4 +283,9 @@ def check_limits(pts, size):
 
 def warpImage(img, H):
     # tweak the homography matrix to move the result to the first quadrant
-    H_cover, pos = coverH(size2rect(img.shape),
+    H_cover, pos = coverH(size2rect(img.shape), H)
+    # find the bounding box of the output
+    x, y, w, h = warpRect(size2rect(img.shape), H_cover)
+    width, height = x + w, y + h
+    assert(width * height < 1e8)    # do not exceed 300 MB for 8 GB RAM
+    # warp the image using the corrected hom

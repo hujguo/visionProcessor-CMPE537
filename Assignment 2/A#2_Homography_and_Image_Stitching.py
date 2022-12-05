@@ -277,4 +277,10 @@ def check_limits(pts, size):
     np.clip(pts[:,1], 0, size[0] - 1, pts[:,1])
     return pts
 
-##################################################################
+################################################################################
+# Stitching functions                                                          #
+################################################################################
+
+def warpImage(img, H):
+    # tweak the homography matrix to move the result to the first quadrant
+    H_cover, pos = coverH(size2rect(img.shape),

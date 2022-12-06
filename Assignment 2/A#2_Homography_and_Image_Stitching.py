@@ -293,4 +293,9 @@ def warpImage(img, H):
     # warped = cv.warpPerspective(img, H_corr, (width, height))
     idx_pts = np.mgrid[0:width, 0:height].reshape(2, -1).T
     map_pts = transform(idx_pts, np.linalg.inv(H_cover))
-    map_pts = map_pts.reshape(width,
+    map_pts = map_pts.reshape(width, height, 2).astype(np.float32)
+    warped = cv.remap(img, map_pts, None, cv.INTER_CUBIC).transpose(1, 0, 2)
+    # make the external boundary solid black, useful for masking
+    warped = np.ascontiguousarray(warped, dtype=np.uint8)
+    gray = cv.cvtColor(warped, cv.COLOR_RGB2GRAY)
+    _, bw = cv.threshold(gray, 1, 

@@ -288,4 +288,9 @@ def warpImage(img, H):
     x, y, w, h = warpRect(size2rect(img.shape), H_cover)
     width, height = x + w, y + h
     assert(width * height < 1e8)    # do not exceed 300 MB for 8 GB RAM
-    # warp the image using the corrected hom
+    # warp the image using the corrected homography matrix
+    # all the fuss is because of the indexing conventions of numpy and cv2
+    # warped = cv.warpPerspective(img, H_corr, (width, height))
+    idx_pts = np.mgrid[0:width, 0:height].reshape(2, -1).T
+    map_pts = transform(idx_pts, np.linalg.inv(H_cover))
+    map_pts = map_pts.reshape(width,

@@ -298,4 +298,10 @@ def warpImage(img, H):
     # make the external boundary solid black, useful for masking
     warped = np.ascontiguousarray(warped, dtype=np.uint8)
     gray = cv.cvtColor(warped, cv.COLOR_RGB2GRAY)
-    _, bw = cv.threshold(gray, 1, 
+    _, bw = cv.threshold(gray, 1, 255, cv.THRESH_BINARY)
+    # https://stackoverflow.com/a/55806272/12447766
+    major = cv.__version__.split('.')[0]
+    if major == '3':
+        _, cnts, _ = cv.findContours(bw, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
+    else:
+        cnts, _ = cv.findContours(bw, cv.RETR_EXTERNAL, cv.CH

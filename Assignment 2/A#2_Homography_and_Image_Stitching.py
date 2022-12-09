@@ -304,4 +304,12 @@ def warpImage(img, H):
     if major == '3':
         _, cnts, _ = cv.findContours(bw, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
     else:
-        cnts, _ = cv.findContours(bw, cv.RETR_EXTERNAL, cv.CH
+        cnts, _ = cv.findContours(bw, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
+    warped = cv.drawContours(warped, cnts, 0, [0, 0, 0], lineType=cv.LINE_4)
+    return (warped, pos)
+
+# only the non-zero pixels are weighted to the average
+def mean_blend(img1, img2):
+    assert(img1.shape == img2.shape)
+    locs1 = np.where(cv.cvtColor(img1, cv.COLOR_RGB2GRAY) != 0)
+    blended1 = 

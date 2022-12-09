@@ -312,4 +312,12 @@ def warpImage(img, H):
 def mean_blend(img1, img2):
     assert(img1.shape == img2.shape)
     locs1 = np.where(cv.cvtColor(img1, cv.COLOR_RGB2GRAY) != 0)
-    blended1 = 
+    blended1 = np.copy(img2)
+    blended1[locs1[0], locs1[1]] = img1[locs1[0], locs1[1]]
+    locs2 = np.where(cv.cvtColor(img2, cv.COLOR_RGB2GRAY) != 0)
+    blended2 = np.copy(img1)
+    blended2[locs2[0], locs2[1]] = img2[locs2[0], locs2[1]]
+    blended = cv.addWeighted(blended1, 0.5, blended2, 0.5, 0)
+    return blended
+
+def ble

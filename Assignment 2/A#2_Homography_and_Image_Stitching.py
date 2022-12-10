@@ -320,4 +320,12 @@ def mean_blend(img1, img2):
     blended = cv.addWeighted(blended1, 0.5, blended2, 0.5, 0)
     return blended
 
-def ble
+def blend_images(imageA, imageB, H):
+    return warpPano(imageA, imageB, H, (0, 0))
+
+def cv_blend_images(imageA, imageB, H):
+    # move origin to cover the third quadrant
+    H_corr, pos = coverH(size2rect(imageA.shape), H)
+    xpos, ypos = pos
+    # warp the image and paste the original one
+    result = cv.w

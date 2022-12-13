@@ -328,4 +328,10 @@ def cv_blend_images(imageA, imageB, H):
     H_corr, pos = coverH(size2rect(imageA.shape), H)
     xpos, ypos = pos
     # warp the image and paste the original one
-    result = cv.w
+    result = cv.warpPerspective(imageA, H_corr, (5000, 5000))
+    bottom, right = int(0), int(0)
+    if ypos + imageB.shape[0] > result.shape[0]:
+        bottom = ypos + imageB.shape[0] - result.shape[0]
+    if xpos + imageB.shape[1] > result.shape[1]:
+        right = xpos + imageB.shape[1] - result.shape[1]
+    result = cv.copyMakeBord

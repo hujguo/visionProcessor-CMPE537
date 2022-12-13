@@ -334,4 +334,10 @@ def cv_blend_images(imageA, imageB, H):
         bottom = ypos + imageB.shape[0] - result.shape[0]
     if xpos + imageB.shape[1] > result.shape[1]:
         right = xpos + imageB.shape[1] - result.shape[1]
-    result = cv.copyMakeBord
+    result = cv.copyMakeBorder(result, 0, bottom, 0, right,
+                               cv.BORDER_CONSTANT, value=[0, 0, 0])
+    # mean value blending
+    idx = np.s_[ypos:ypos+imageB.shape[0], xpos:xpos+imageB.shape[1]]
+    result[idx] = mean_blend(result[idx], imageB)
+    # crop extra paddings
+    x,y,w,h = cv.boundingRect(cv.cvtColor(resu

@@ -340,4 +340,13 @@ def cv_blend_images(imageA, imageB, H):
     idx = np.s_[ypos:ypos+imageB.shape[0], xpos:xpos+imageB.shape[1]]
     result[idx] = mean_blend(result[idx], imageB)
     # crop extra paddings
-    x,y,w,h = cv.boundingRect(cv.cvtColor(resu
+    x,y,w,h = cv.boundingRect(cv.cvtColor(result, cv.COLOR_RGB2GRAY))
+    result = result[0:y+h,0:x+w]
+    # return the resulting image with shift amount
+    return (result, (xpos, ypos))
+
+def warpPano(prevPano, img, H, orig):
+    # corret homography matrix
+    T = np.array([[1, 0, -orig[0]], [0, 1, -orig[1]], [0, 0, 1]])
+    H_corr = H.dot(T)
+    # warp the image an

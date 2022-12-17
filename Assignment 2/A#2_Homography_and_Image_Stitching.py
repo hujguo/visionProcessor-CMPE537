@@ -349,4 +349,12 @@ def warpPano(prevPano, img, H, orig):
     # corret homography matrix
     T = np.array([[1, 0, -orig[0]], [0, 1, -orig[1]], [0, 0, 1]])
     H_corr = H.dot(T)
-    # warp the image an
+    # warp the image and obtain shift amount of origin
+    result, pos = warpImage(prevPano, H_corr)
+    xpos, ypos = pos
+    # zero pad the result
+    rect = (xpos, ypos, img.shape[1], img.shape[0])
+    result, _ = addBorder(result, rect)
+    # mean value blending
+    idx = np.s_[ypos : ypos + img.shape[0], xpos : xpos + img.shape[1]]
+    r

@@ -364,4 +364,11 @@ def warpPano(prevPano, img, H, orig):
     # return the resulting image with shift amount
     return (result, (xpos - x, ypos - y))
 
-# no warping here, useful for combining
+# no warping here, useful for combining two different stitched images
+# the image at given origin coordinates must be the same
+def patchPano(img1, img2, orig1=(0,0), orig2=(0,0)):
+    # bottom right points
+    br1 = (img1.shape[1] - 1, img1.shape[0] - 1)
+    br2 = (img2.shape[1] - 1, img2.shape[0] - 1)
+    # distance from orig to br
+    diag2 = tuple(map(sub

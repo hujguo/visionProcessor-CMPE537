@@ -357,4 +357,11 @@ def warpPano(prevPano, img, H, orig):
     result, _ = addBorder(result, rect)
     # mean value blending
     idx = np.s_[ypos : ypos + img.shape[0], xpos : xpos + img.shape[1]]
-    r
+    result[idx] = mean_blend(result[idx], img)
+    # crop extra paddings
+    x, y, w, h = cv.boundingRect(cv.cvtColor(result, cv.COLOR_RGB2GRAY))
+    result = result[y : y + h, x : x + w]
+    # return the resulting image with shift amount
+    return (result, (xpos - x, ypos - y))
+
+# no warping here, useful for combining

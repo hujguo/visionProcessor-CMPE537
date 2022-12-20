@@ -371,4 +371,12 @@ def patchPano(img1, img2, orig1=(0,0), orig2=(0,0)):
     br1 = (img1.shape[1] - 1, img1.shape[0] - 1)
     br2 = (img2.shape[1] - 1, img2.shape[0] - 1)
     # distance from orig to br
-    diag2 = tuple(map(sub
+    diag2 = tuple(map(sub, br2, orig2))
+    # possible pano corner coordinates based on img1
+    extremum = np.array([(0, 0), br1,
+                tuple(map(sum, zip(orig1, diag2))),
+                tuple(map(sub, orig1, orig2))])
+    bb = cv.boundingRect(extremum)
+    # patch img1 to img2
+    pano, shift = addBorder(img1, bb)
+    orig = tuple

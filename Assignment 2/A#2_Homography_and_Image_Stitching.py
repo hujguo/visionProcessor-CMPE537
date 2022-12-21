@@ -379,4 +379,11 @@ def patchPano(img1, img2, orig1=(0,0), orig2=(0,0)):
     bb = cv.boundingRect(extremum)
     # patch img1 to img2
     pano, shift = addBorder(img1, bb)
-    orig = tuple
+    orig = tuple(map(sum, zip(orig1, shift)))
+    idx = np.s_[orig[1] : orig[1] + img2.shape[0] - orig2[1],
+                orig[0] : orig[0] + img2.shape[1] - orig2[0]]
+    subImg = img2[orig2[1] : img2.shape[0], orig2[0] : img2.shape[1]]
+    pano[idx] = mean_blend(pano[idx], subImg)
+    return (pano, orig)
+
+# base image is the last im

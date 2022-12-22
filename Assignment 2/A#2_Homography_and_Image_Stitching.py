@@ -386,4 +386,16 @@ def patchPano(img1, img2, orig1=(0,0), orig2=(0,0)):
     pano[idx] = mean_blend(pano[idx], subImg)
     return (pano, orig)
 
-# base image is the last im
+# base image is the last image in each iteration
+def blend_multiple_images(images, homographies):
+    N = len(images)
+    assert(N >= 2)
+    assert(len(homographies) == N - 1)
+    pano = np.copy(images[0])
+    pos = (0, 0)
+    for i in range(N - 1):
+        # get homography matrix
+        img = images[i + 1]
+        H = homographies[i]
+        # warp pano onto image
+  

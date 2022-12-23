@@ -398,4 +398,9 @@ def blend_multiple_images(images, homographies):
         img = images[i + 1]
         H = homographies[i]
         # warp pano onto image
-  
+        pano, pos = warpPano(pano, img, H, pos)
+    return (pano, pos)
+
+################################################################################
+# Miscellaneous                                                                #
+#########################################################################

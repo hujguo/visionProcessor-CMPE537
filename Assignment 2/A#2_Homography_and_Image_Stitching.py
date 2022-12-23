@@ -403,4 +403,11 @@ def blend_multiple_images(images, homographies):
 
 ################################################################################
 # Miscellaneous                                                                #
-#########################################################################
+################################################################################
+
+def color_list(N, colormap=cv.COLORMAP_HSV):
+    cmap = cv.applyColorMap(np.array(range(256), np.uint8), colormap)
+    return list(tuple(int(c) for c in cmap[int(256*n/N)][0]) for n in range(N))
+
+def mark_points(img, x, colormap=cv.COLORMAP_HSV, bgr=False):
+    marked = cv.cvtColor(img, cv.

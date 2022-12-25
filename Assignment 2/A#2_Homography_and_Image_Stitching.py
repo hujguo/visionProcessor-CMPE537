@@ -410,4 +410,13 @@ def color_list(N, colormap=cv.COLORMAP_HSV):
     return list(tuple(int(c) for c in cmap[int(256*n/N)][0]) for n in range(N))
 
 def mark_points(img, x, colormap=cv.COLORMAP_HSV, bgr=False):
-    marked = cv.cvtColor(img, cv.
+    marked = cv.cvtColor(img, cv.COLOR_RGB2BGR)
+    if colormap == 'invert':
+        colors = list(tuple(int(256-v) for v in img[p]) for p in x)
+    elif type(colormap) is list:
+        if len(colormap) >= len(x):
+            colors = colormap
+        else:
+            colors = color_list(len(x))
+    else:
+        colors

@@ -419,4 +419,11 @@ def mark_points(img, x, colormap=cv.COLORMAP_HSV, bgr=False):
         else:
             colors = color_list(len(x))
     else:
-        colors
+        colors = color_list(len(x), colormap)
+    for i in range(len(x)):
+        marked = cv.drawMarker(marked, (int(x[i][0]), int(x[i][1])), colors[i],
+                               cv.MARKER_CROSS, markerSize=30, thickness=2)
+    if bgr:
+        return marked
+    else:
+        return cv.cvtColor(marke

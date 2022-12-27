@@ -426,4 +426,12 @@ def mark_points(img, x, colormap=cv.COLORMAP_HSV, bgr=False):
     if bgr:
         return marked
     else:
-        return cv.cvtColor(marke
+        return cv.cvtColor(marked, cv.COLOR_BGR2RGB)
+
+def match_points(img1, img2, pts1, pts2, colors=None, hstack=True):
+    if colors is None:
+        colors = color_list(len(pts1))
+    if img1.shape != img2.shape:
+        img1b = cv.copyMakeBorder(img1, 0, # up
+                                  max(img2.shape[0] - img1.shape[0], 0), # down
+            

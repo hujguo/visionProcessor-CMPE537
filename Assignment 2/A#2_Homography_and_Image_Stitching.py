@@ -438,4 +438,10 @@ def match_points(img1, img2, pts1, pts2, colors=None, hstack=True):
                                   max(img2.shape[1] - img1.shape[1], 0), # right
                                   cv.BORDER_CONSTANT, value=[0, 0, 0])
         img2b = cv.copyMakeBorder(img2, 0, # up
-                                  max(img1.shape[0] - img2.shape[0], 0), # d
+                                  max(img1.shape[0] - img2.shape[0], 0), # down
+                                  0, # left
+                                  max(img1.shape[1] - img2.shape[1], 0), # right
+                                  cv.BORDER_CONSTANT, value=[0, 0, 0])
+        img1 = img1b
+        img2 = img2b
+    img = np.concatenate((img1, img2), axis=int

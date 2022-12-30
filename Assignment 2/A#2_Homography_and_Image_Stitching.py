@@ -444,4 +444,12 @@ def match_points(img1, img2, pts1, pts2, colors=None, hstack=True):
                                   cv.BORDER_CONSTANT, value=[0, 0, 0])
         img1 = img1b
         img2 = img2b
-    img = np.concatenate((img1, img2), axis=int
+    img = np.concatenate((img1, img2), axis=int(hstack))
+    for i in range(len(pts1)):
+        pt1 = tuple(pts1[i])
+        if hstack:
+            pt2 = (pts2[i][0] + img1.shape[1], pts2[i][1])
+        else:
+            pt2 = (pts2[i][0], pts2[i][1] + img1.shape[0])
+        img = cv.line(img, pt1, pt2, colors[i], 3, cv.LINE_AA)
+  

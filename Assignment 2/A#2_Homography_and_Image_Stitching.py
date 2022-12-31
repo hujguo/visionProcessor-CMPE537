@@ -459,4 +459,11 @@ def match_points(img1, img2, pts1, pts2, colors=None, hstack=True):
 ################################################################################
 
 # NxN matrix
-# points[i][j] represents correspondence from imag
+# points[i][j] represents correspondence from image[i] to image[j]
+# Not necessarily filled, if there is no common point
+# points[i][i]: always None, why would you use that?
+# points[i][j][0]: first image points (in [x, y] form)
+# points[i][j][1]: second image points (same, cv2 format, NOT [row, column])
+def print_points(points):
+    for i in range(len(points)):
+        pri

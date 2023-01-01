@@ -466,4 +466,15 @@ def match_points(img1, img2, pts1, pts2, colors=None, hstack=True):
 # points[i][j][1]: second image points (same, cv2 format, NOT [row, column])
 def print_points(points):
     for i in range(len(points)):
-        pri
+        print('\trow', i)
+        for j in range(len(points[i])):
+            print('\t\tcolumn', j)
+            print(points[i][j])
+        print('')
+
+def show_matches(dataset, points):
+    imgs = read_imgs(dataset)
+    colors = color_list(len(points[0][1][0]))
+    for i in range(len(imgs) - 1):
+        for j in range(i + 1, len(imgs)):
+ 

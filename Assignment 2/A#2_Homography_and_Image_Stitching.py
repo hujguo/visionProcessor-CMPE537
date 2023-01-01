@@ -477,4 +477,12 @@ def show_matches(dataset, points):
     colors = color_list(len(points[0][1][0]))
     for i in range(len(imgs) - 1):
         for j in range(i + 1, len(imgs)):
- 
+            img1 = imgs[i]
+            img2 = imgs[j]
+            pts1 = points[i][j][0]
+            pts2 = points[i][j][1]
+            img = match_points(img1, img2, pts1, pts2, colors)
+            # draw results
+            plt.figure()
+            plt.imshow(img)
+            plt.title(IMNAMES[dataset][i] 

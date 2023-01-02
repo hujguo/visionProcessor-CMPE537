@@ -485,4 +485,14 @@ def show_matches(dataset, points):
             # draw results
             plt.figure()
             plt.imshow(img)
-            plt.title(IMNAMES[dataset][i] 
+            plt.title(IMNAMES[dataset][i] + ' - ' + IMNAMES[dataset][j])
+    # results are displayed here
+    plt.show()
+
+def show_warp_and_match(warped, matched):
+    fig = plt.figure()
+    gs = fig.add_gridspec(2, 3)
+    ax_warped = fig.add_subplot(gs[:, 0:2])
+    ax_warped.imshow(warped)
+    ax_warped.set_title('Warping Result')
+    ax_matched = fig.add_subplot

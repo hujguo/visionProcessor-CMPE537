@@ -495,4 +495,11 @@ def show_warp_and_match(warped, matched):
     ax_warped = fig.add_subplot(gs[:, 0:2])
     ax_warped.imshow(warped)
     ax_warped.set_title('Warping Result')
-    ax_matched = fig.add_subplot
+    ax_matched = fig.add_subplot(gs[:, 2])
+    ax_matched.imshow(matched)
+    ax_matched.set_title('Matching Points')
+    return fig
+
+################################################################################
+# test Homography and Image Stitching                                          #
+##################################################################

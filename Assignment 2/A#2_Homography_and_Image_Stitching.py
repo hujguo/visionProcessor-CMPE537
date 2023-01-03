@@ -502,4 +502,11 @@ def show_warp_and_match(warped, matched):
 
 ################################################################################
 # test Homography and Image Stitching                                          #
-##################################################################
+################################################################################
+
+def test_save_points(dataset):
+    print('Running test_save_points for %s dataset' % dataset)
+    # select corresponding points in each image manually
+    points = select_corresponding_points(dataset, K=5)
+    save_points(dataset, points)
+    # load previously saved cor

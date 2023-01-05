@@ -509,4 +509,12 @@ def test_save_points(dataset):
     # select corresponding points in each image manually
     points = select_corresponding_points(dataset, K=5)
     save_points(dataset, points)
-    # load previously saved cor
+    # load previously saved corresponding points
+    points = load_points(dataset)
+    print_points(points)
+    show_matches(dataset, points)
+
+def test_check_points(dataset, h_use_cv=False, w_use_cv=False):
+    print('Running test_check_points for %s dataset' % dataset)
+    print('OpenCV usage: homography (%s), warping (%s)' % (h_use_cv, w_use_cv))
+ 

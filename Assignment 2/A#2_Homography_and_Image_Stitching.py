@@ -524,4 +524,9 @@ def test_check_points(dataset, h_use_cv=False, w_use_cv=False):
             fx=h/img.shape[0], fy=h/img.shape[0]), cv.COLOR_RGB2BGR)
     for i in range(len(points)):
         for j in range(i):
-       
+            points[i][j] = None
+    print('Check whether the points are selected well')
+    print('Press ENTER to re-select and save points for that image pair')
+    print('Press any other key to continue to the next image pair')
+    print('Press ESC to exit')
+    for i in range(len(points)):

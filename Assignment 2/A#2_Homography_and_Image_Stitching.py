@@ -517,4 +517,11 @@ def test_save_points(dataset):
 def test_check_points(dataset, h_use_cv=False, w_use_cv=False):
     print('Running test_check_points for %s dataset' % dataset)
     print('OpenCV usage: homography (%s), warping (%s)' % (h_use_cv, w_use_cv))
- 
+    points = load_points(dataset)
+    imgs = read_imgs(dataset)
+    colors = color_list(len(points[0][1][0]))
+    disp = lambda img, h=480 : cv.cvtColor(cv.resize(img, (0, 0),
+            fx=h/img.shape[0], fy=h/img.shape[0]), cv.COLOR_RGB2BGR)
+    for i in range(len(points)):
+        for j in range(i):
+       

@@ -530,3 +530,14 @@ def test_check_points(dataset, h_use_cv=False, w_use_cv=False):
     print('Press any other key to continue to the next image pair')
     print('Press ESC to exit')
     for i in range(len(points)):
+        j = i
+        while j + 1 < len(points):
+            j += 1
+            img1 = imgs[i]
+            img2 = imgs[j]
+            pts1 = points[i][j][0]
+            pts2 = points[i][j][1]
+            if len(pts1):
+                if h_use_cv:
+                    H, _ = cv.findHomography(pts1, pts2)
+         

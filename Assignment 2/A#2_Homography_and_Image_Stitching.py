@@ -540,4 +540,11 @@ def test_check_points(dataset, h_use_cv=False, w_use_cv=False):
             if len(pts1):
                 if h_use_cv:
                     H, _ = cv.findHomography(pts1, pts2)
-         
+                else:
+                    H = computeH(pts1, pts2)
+                if w_use_cv:
+                    warped, _ = cv_blend_images(img1, img2, H)
+                else:
+                    warped, _ = blend_images(img1, img2, H)
+                matched = match_points(img1, img2, pts1, pts2)
+     

@@ -547,4 +547,11 @@ def test_check_points(dataset, h_use_cv=False, w_use_cv=False):
                 else:
                     warped, _ = blend_images(img1, img2, H)
                 matched = match_points(img1, img2, pts1, pts2)
-     
+                winM = '%s_matched_%d-%d' % (dataset, i, j)
+                winW = '%s_warped_%d-%d' % (dataset, i, j)
+                cv.imshow(winM, disp(matched))
+                cv.imshow(winW, disp(warped))
+                ch = cv.waitKey() & 0xFF
+                cv.destroyWindow(winM)
+                cv.destroyWindow(winW)
+ 

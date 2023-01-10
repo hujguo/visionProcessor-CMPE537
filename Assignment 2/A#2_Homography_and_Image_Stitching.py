@@ -554,4 +554,9 @@ def test_check_points(dataset, h_use_cv=False, w_use_cv=False):
                 ch = cv.waitKey() & 0xFF
                 cv.destroyWindow(winM)
                 cv.destroyWindow(winW)
- 
+                # press ENTER to re-select points
+                if ch == 13:
+                    win1, win2 = '%s_%d' % (dataset, i), '%s_%d' % (dataset, j)
+                    points[i][j] = select_pair(img1, img2, len(pts1), win1,
+                                               win2, list(pts1), list(pts2))
+                  

@@ -559,4 +559,12 @@ def test_check_points(dataset, h_use_cv=False, w_use_cv=False):
                     win1, win2 = '%s_%d' % (dataset, i), '%s_%d' % (dataset, j)
                     points[i][j] = select_pair(img1, img2, len(pts1), win1,
                                                win2, list(pts1), list(pts2))
-                  
+                    save_points(dataset, points)
+                    points = load_points(dataset)
+                    j -= 1
+                # press ESC to exit
+                elif ch == 27:
+                    return
+
+def test_image_pair(dataset, id_from, id_to, den=1,
+                    h_use_cv=False, w_

@@ -567,4 +567,10 @@ def test_check_points(dataset, h_use_cv=False, w_use_cv=False):
                     return
 
 def test_image_pair(dataset, id_from, id_to, den=1,
-                    h_use_cv=False, w_
+                    h_use_cv=False, w_use_cv=False):
+    print('Running test_image_pair for %s dataset' % dataset)
+    print('Stitching from #%d to #%d with a downscale factor of %.1f' % (
+        id_from, id_to, den))
+    print('OpenCV usage: homography (%s), warping (%s)' % (h_use_cv, w_use_cv))
+    imgs = read_imgs(dataset)
+    img1 = cv.resi

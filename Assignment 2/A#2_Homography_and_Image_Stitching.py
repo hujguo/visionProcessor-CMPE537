@@ -573,4 +573,11 @@ def test_image_pair(dataset, id_from, id_to, den=1,
         id_from, id_to, den))
     print('OpenCV usage: homography (%s), warping (%s)' % (h_use_cv, w_use_cv))
     imgs = read_imgs(dataset)
-    img1 = cv.resi
+    img1 = cv.resize(imgs[id_from], (0, 0), fx=1/den, fy=1/den)
+    img2 = cv.resize(imgs[id_to], (0, 0), fx=1/den, fy=1/den)
+    points = load_points(dataset)
+    pts1 = points[id_from][id_to][0] / den
+    pts2 = points[id_from][id_to][1] / den
+    # calculate homography matrix
+    if h_use_cv:
+        H, _ =  cv.findHomography(pts1, pts

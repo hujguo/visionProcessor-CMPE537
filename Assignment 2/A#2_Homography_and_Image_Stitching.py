@@ -580,4 +580,15 @@ def test_image_pair(dataset, id_from, id_to, den=1,
     pts2 = points[id_from][id_to][1] / den
     # calculate homography matrix
     if h_use_cv:
-        H, _ =  cv.findHomography(pts1, pts
+        H, _ =  cv.findHomography(pts1, pts2)
+    else:
+        H = computeH(pts1, pts2)
+    # warp the first image onto the second one
+    if w_use_cv:
+        blended, _ = cv_blend_images(img1, img2, H)
+    else:
+        blended, _ = blend_images(img1, img2, H)
+    # display the result
+    plt.imshow(blended)
+    plt.title('Image Pair %d-%d' % (id_from, id_to))
+ 

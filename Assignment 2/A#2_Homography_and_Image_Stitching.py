@@ -591,4 +591,13 @@ def test_image_pair(dataset, id_from, id_to, den=1,
     # display the result
     plt.imshow(blended)
     plt.title('Image Pair %d-%d' % (id_from, id_to))
- 
+    plt.show()
+
+def test_stitch_all(dataset, den=4):
+    print('Running test_stitch_all for %s dataset' % dataset)
+    print('Downscale factor: %.1f' % den)
+    # stitch all images
+    imgs = read_imgs(dataset)
+    points = load_points(dataset)
+    for i in range(len(imgs)):
+        imgs[i] = cv.resize(imgs[i], (0, 0), fx=1/den, f

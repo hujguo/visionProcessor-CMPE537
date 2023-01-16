@@ -600,4 +600,14 @@ def test_stitch_all(dataset, den=4):
     imgs = read_imgs(dataset)
     points = load_points(dataset)
     for i in range(len(imgs)):
-        imgs[i] = cv.resize(imgs[i], (0, 0), fx=1/den, f
+        imgs[i] = cv.resize(imgs[i], (0, 0), fx=1/den, fy=1/den)
+    pano = np.copy(imgs[0])
+    xpos, ypos = int(0), int(0)
+    homographies = []
+    for i in range(1, len(imgs)):
+        img = imgs[i]
+        pts1 = points[i-1][i][0] / den
+        pts2 = points[i-1][i][1] / den
+        H = computeH(pts1, pts2)
+        homographies.append(H)
+    pan

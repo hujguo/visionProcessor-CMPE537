@@ -610,4 +610,11 @@ def test_stitch_all(dataset, den=4):
         pts2 = points[i-1][i][1] / den
         H = computeH(pts1, pts2)
         homographies.append(H)
-    pan
+    pano, _ = blend_multiple_images(imgs, homographies)
+    plt.imshow(pano)
+    plt.title('All %s Images Stitched' % (dataset))
+    plt.show()
+
+################################################################################
+# task Homography and Image Stitching                                          #
+#

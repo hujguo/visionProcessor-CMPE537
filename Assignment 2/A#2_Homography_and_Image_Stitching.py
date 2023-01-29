@@ -617,4 +617,14 @@ def test_stitch_all(dataset, den=4):
 
 ################################################################################
 # task Homography and Image Stitching                                          #
-#
+################################################################################
+
+def task_mosaic_paris():
+    print('Running task_mosaic_paris')
+    dataset = 'paris'
+    points = load_points(dataset)
+    imgs = read_imgs(dataset)
+    # a to b
+    pts1 = points[0][1][0]
+    pts2 = points[0][1][1]
+    Hab = compute

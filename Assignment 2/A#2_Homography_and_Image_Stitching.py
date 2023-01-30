@@ -627,4 +627,14 @@ def task_mosaic_paris():
     # a to b
     pts1 = points[0][1][0]
     pts2 = points[0][1][1]
-    Hab = compute
+    Hab = computeH(pts1, pts2)
+    panoA, posA = blend_images(imgs[0], imgs[1], Hab)
+    # c to b
+    pts1 = points[2][1][0]
+    pts2 = points[2][1][1]
+    Hcb = computeH(pts1, pts2)
+    panoC, posC = blend_images(imgs[2], imgs[1], Hcb)
+    # all together
+    pano, _ = patchPano(panoA, panoC, posA, posC)
+    # display and save results
+    plt.i

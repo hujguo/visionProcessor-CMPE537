@@ -637,4 +637,13 @@ def task_mosaic_paris():
     # all together
     pano, _ = patchPano(panoA, panoC, posA, posC)
     # display and save results
-    plt.i
+    plt.imshow(pano)
+    plt.title('Paris Mosaic')
+    plt.show()
+    save_image('mosaic_paris', pano)
+
+def task_mosaic_5(dataset, method, den=1):
+    print('Running task_mosaic_5 for %s dataset' % dataset)
+    print('Method: %s' % method)
+    print('Downscale factor: %.1f' % den)
+    asser

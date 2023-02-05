@@ -646,4 +646,13 @@ def task_mosaic_5(dataset, method, den=1):
     print('Running task_mosaic_5 for %s dataset' % dataset)
     print('Method: %s' % method)
     print('Downscale factor: %.1f' % den)
-    asser
+    assert(method in METHODS)
+    imgs = read_imgs(dataset)
+    assert(len(imgs) == 5)
+    for i in range(len(imgs)):
+        imgs[i] = cv.resize(imgs[i], (0, 0), fx=1/den, fy=1/den)
+    points = load_points(dataset)
+    for i in range(len(points)):
+        for j in range(len(points)):
+            if i != j:
+             

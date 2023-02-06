@@ -655,4 +655,11 @@ def task_mosaic_5(dataset, method, den=1):
     for i in range(len(points)):
         for j in range(len(points)):
             if i != j:
-             
+                points[i][j][0] = points[i][j][0] / den
+                points[i][j][1] = points[i][j][1] / den
+    if method is METHODS[0]:    # left-to-right
+        # left1 to left2
+        pts1 = points[1][0][0]
+        pts2 = points[1][0][1]
+        H = computeH(pts1, pts2)
+    

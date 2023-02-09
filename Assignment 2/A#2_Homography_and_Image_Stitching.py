@@ -693,4 +693,13 @@ def task_mosaic_5(dataset, method, den=1):
         H = computeH(pts1, pts2)
         pano3, pos3 = blend_images(imgs[3], imgs[2], H)
         # mosaic1
-        pano2, pos2 = patchPano(pano1, pano3, pos
+        pano2, pos2 = patchPano(pano1, pano3, pos1, pos3)
+        # left2 to middle
+        pts1 = points[0][2][0]
+        pts2 = points[0][2][1]
+        H = computeH(pts1, pts2)
+        pano0, pos0 = blend_images(imgs[0], imgs[2], H)
+        # right2 to middle
+        pts1 = points[4][2][0]
+        pts2 = points[4][2][1]
+        H = computeH

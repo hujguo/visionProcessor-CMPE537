@@ -720,4 +720,13 @@ def task_mosaic_5(dataset, method, den=1):
         H = computeH(pts1, pts2)
         pano3, pos3 = blend_images(imgs[4], imgs[3], H)
         # left1 to middle
-        pts1 = points[1][2][
+        pts1 = points[1][2][0]
+        pts2 = points[1][2][1]
+        H = computeH(pts1, pts2)
+        pano_left, pos_left = warpPano(pano1, imgs[2], H, pos1)
+        # right1 to middle
+        pts1 = points[3][2][0]
+        pts2 = points[3][2][1]
+        H = computeH(pts1, pts2)
+        pano_right, pos_right = warpPano(pano3, imgs[2], H, pos3)
+    

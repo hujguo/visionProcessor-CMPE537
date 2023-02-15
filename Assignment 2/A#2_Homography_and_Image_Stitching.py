@@ -729,4 +729,13 @@ def task_mosaic_5(dataset, method, den=1):
         pts2 = points[3][2][1]
         H = computeH(pts1, pts2)
         pano_right, pos_right = warpPano(pano3, imgs[2], H, pos3)
-    
+        # all together
+        pano, pos = patchPano(pano_left, pano_right, pos_left, pos_right)
+    # display and save result
+    plt.imshow(pano)
+    plt.title('%s Mosaic with %s Method' % (dataset, method))
+    plt.show()
+    save_image('mosaic_' + dataset + '_' + method, pano)
+
+def task_corresponding_pairs(id_from, id_to, K=8):
+ 

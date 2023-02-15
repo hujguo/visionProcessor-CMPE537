@@ -738,4 +738,12 @@ def task_mosaic_5(dataset, method, den=1):
     save_image('mosaic_' + dataset + '_' + method, pano)
 
 def task_corresponding_pairs(id_from, id_to, K=8):
- 
+    assert(K >= 8)
+    # load data
+    dataset = 'paris'
+    print('Running task_corresponding_pairs for %s dataset' % dataset)
+    print('Stitching from #%d to #%d with %d corresponding points' % (
+        id_from, id_to, K))
+    imgs = read_imgs(dataset)
+    points = load_points(dataset)
+    img1, img

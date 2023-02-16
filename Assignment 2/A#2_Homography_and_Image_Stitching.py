@@ -746,4 +746,10 @@ def task_corresponding_pairs(id_from, id_to, K=8):
         id_from, id_to, K))
     imgs = read_imgs(dataset)
     points = load_points(dataset)
-    img1, img
+    img1, img2 = imgs[id_from], imgs[id_to]
+    pts1, pts2 = points[id_from][id_to][0], points[id_from][id_to][1]
+    # select corresponding point pairs if not sufficient
+    if len(pts1) < K:
+        win1, win2 = IMNAMES[dataset][id_from], IMNAMES[dataset][id_to]
+        pts1 = [(pt[0], pt[1]) for pt in pts1]
+       

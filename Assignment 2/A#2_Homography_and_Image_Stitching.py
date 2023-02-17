@@ -758,4 +758,10 @@ def task_corresponding_pairs(id_from, id_to, K=8):
     pts1_5, pts2_5 = pts1[0:5], pts2[0:5]
     H_5 = computeH(pts1_5, pts2_5)
     warped_5, _ = blend_images(img1, img2, H_5)
-    ma
+    matched_5 = match_points(img1, img2, pts1_5, pts2_5, hstack=False)
+    # warp image using K point pairs
+    pts1_K, pts2_K = pts1[0:K], pts2[0:K]
+    H_K = computeH(pts1_K, pts2_K)
+    warped_K, _ = blend_images(img1, img2, H_K)
+    matched_K = match_points(img1, img2, pts1_K, pts2_K, hstack=False)
+    # compare and save the result

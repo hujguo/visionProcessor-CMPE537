@@ -752,4 +752,10 @@ def task_corresponding_pairs(id_from, id_to, K=8):
     if len(pts1) < K:
         win1, win2 = IMNAMES[dataset][id_from], IMNAMES[dataset][id_to]
         pts1 = [(pt[0], pt[1]) for pt in pts1]
-       
+        pts2 = [(pt[0], pt[1]) for pt in pts2]
+        pts1, pts2 = select_pair(img1, img2, K, win1, win2, pts1, pts2)
+    # warp image using 5 point pairs
+    pts1_5, pts2_5 = pts1[0:5], pts2[0:5]
+    H_5 = computeH(pts1_5, pts2_5)
+    warped_5, _ = blend_images(img1, img2, H_5)
+    ma

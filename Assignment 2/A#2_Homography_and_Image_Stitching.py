@@ -770,4 +770,13 @@ def task_corresponding_pairs(id_from, id_to, K=8):
     figK = show_warp_and_match(warped_K, matched_K)
     figK.suptitle('%d corresponding point pairs' % (K))
     os.makedirs(RESDIR, exist_ok=True)
-    save_figure(fig5, 'corresponding-5_%d-%d' %
+    save_figure(fig5, 'corresponding-5_%d-%d' % (id_from, id_to))
+    save_figure(figK, 'corresponding-%d_%d-%d' % (K, id_from, id_to))
+    plt.show()
+
+def task_point_selection(id_from, id_to, wrong=5):
+    assert(wrong >= 5)
+    # load data
+    dataset = 'paris'
+    print('Running task_point_selection for %s dataset' % dataset)
+    print('Stitching from #%

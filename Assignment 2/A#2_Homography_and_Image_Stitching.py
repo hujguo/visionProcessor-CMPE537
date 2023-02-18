@@ -764,4 +764,10 @@ def task_corresponding_pairs(id_from, id_to, K=8):
     H_K = computeH(pts1_K, pts2_K)
     warped_K, _ = blend_images(img1, img2, H_K)
     matched_K = match_points(img1, img2, pts1_K, pts2_K, hstack=False)
-    # compare and save the result
+    # compare and save the results
+    fig5 = show_warp_and_match(warped_5, matched_5)
+    fig5.suptitle('5 Corresponding Point Pairs')
+    figK = show_warp_and_match(warped_K, matched_K)
+    figK.suptitle('%d corresponding point pairs' % (K))
+    os.makedirs(RESDIR, exist_ok=True)
+    save_figure(fig5, 'corresponding-5_%d-%d' %

@@ -779,4 +779,13 @@ def task_point_selection(id_from, id_to, wrong=5):
     # load data
     dataset = 'paris'
     print('Running task_point_selection for %s dataset' % dataset)
-    print('Stitching from #%
+    print('Stitching from #%d to #%d with %d wrong corresponding points' % (
+        id_from, id_to, wrong))
+    imgs = read_imgs(dataset)
+    points = load_points(dataset)
+    img1 = imgs[id_from]
+    img2 = imgs[id_to]
+    pts1 = points[id_from][id_to][0]
+    pts2 = points[id_from][id_to][1]
+    # add wrong point pairs
+    rand1 = random

@@ -788,4 +788,11 @@ def task_point_selection(id_from, id_to, wrong=5):
     pts1 = points[id_from][id_to][0]
     pts2 = points[id_from][id_to][1]
     # add wrong point pairs
-    rand1 = random
+    rand1 = random_points(img1.shape, wrong)
+    rand2 = random_points(img2.shape, wrong)
+    pts1_w = np.append(pts1, rand1, axis=0)
+    pts2_w = np.append(pts2, rand2, axis=0)
+    # warp image using original data
+    H = computeH(pts1, pts2)
+    warped, _ = blend_images(img1, img2, H)
+    matched = match_points(i

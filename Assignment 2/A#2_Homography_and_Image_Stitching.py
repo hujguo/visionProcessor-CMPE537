@@ -795,4 +795,10 @@ def task_point_selection(id_from, id_to, wrong=5):
     # warp image using original data
     H = computeH(pts1, pts2)
     warped, _ = blend_images(img1, img2, H)
-    matched = match_points(i
+    matched = match_points(img1, img2, pts1, pts2, hstack=False)
+    # warp image using wrong data
+    H_w = computeH(pts1_w, pts2_w)
+    warped_w, _ = blend_images(img1, img2, H_w)
+    matched_w = match_points(img1, img2, pts1_w, pts2_w, hstack=False)
+    # compare and save the results
+    fig = show_warp_and_match(wa

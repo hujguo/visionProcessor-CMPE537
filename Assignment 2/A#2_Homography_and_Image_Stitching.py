@@ -801,4 +801,13 @@ def task_point_selection(id_from, id_to, wrong=5):
     warped_w, _ = blend_images(img1, img2, H_w)
     matched_w = match_points(img1, img2, pts1_w, pts2_w, hstack=False)
     # compare and save the results
-    fig = show_warp_and_match(wa
+    fig = show_warp_and_match(warped, matched)
+    fig.suptitle('Original')
+    fig_w = show_warp_and_match(warped_w, matched_w)
+    fig_w.suptitle('Wrong Points')
+    os.makedirs(RESDIR, exist_ok=True)
+    save_figure(fig, 'selection-original_%d-%d' % (id_from, id_to))
+    save_figure(fig_w, 'selection-wrong-%d_%d-%d' % (wrong, id_from, id_to))
+    plt.show()
+
+def task_no

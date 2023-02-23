@@ -810,4 +810,11 @@ def task_point_selection(id_from, id_to, wrong=5):
     save_figure(fig_w, 'selection-wrong-%d_%d-%d' % (wrong, id_from, id_to))
     plt.show()
 
-def task_no
+def task_noisy_points(id_from, id_to, noise=5):
+    # load data
+    dataset = 'paris'
+    print('Running task_noisy_points for %s dataset' % dataset)
+    print('Stitching from #%d to #%d with a noise of %d pixels' % (
+        id_from, id_to, noise))
+    imgs = read_imgs(dataset)
+    points 

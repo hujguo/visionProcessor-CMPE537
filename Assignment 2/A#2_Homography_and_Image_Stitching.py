@@ -817,4 +817,11 @@ def task_noisy_points(id_from, id_to, noise=5):
     print('Stitching from #%d to #%d with a noise of %d pixels' % (
         id_from, id_to, noise))
     imgs = read_imgs(dataset)
-    points 
+    points = load_points(dataset)
+    img1 = imgs[id_from]
+    img2 = imgs[id_to]
+    pts1 = points[id_from][id_to][0]
+    pts2 = points[id_from][id_to][1]
+    # add noise to corresponding point pairs
+    rand1 = np.random.randint(-noise, noise, size=pts1.shape)
+    rand2 =

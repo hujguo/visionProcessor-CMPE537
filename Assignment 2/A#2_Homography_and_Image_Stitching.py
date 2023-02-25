@@ -830,4 +830,12 @@ def task_noisy_points(id_from, id_to, noise=5):
     # warp image using original data
     H = computeH(pts1, pts2)
     warped, _ = blend_images(img1, img2, H)
-    matched = match_points(img1, img2, pts1, pts2, hstack=
+    matched = match_points(img1, img2, pts1, pts2, hstack=False)
+    # warp image using noisy data
+    H_n = computeH(pts1_n, pts2_n)
+    warped_n, _ = blend_images(img1, img2, H_n)
+    matched_n = match_points(img1, img2, pts1_n, pts2_n, hstack=False)
+    # compare and save the results
+    fig = show_warp_and_match(warped, matched)
+    fig.suptitle('Original')
+    fig_n = s

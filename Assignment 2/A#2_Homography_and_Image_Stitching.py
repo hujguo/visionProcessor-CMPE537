@@ -824,4 +824,10 @@ def task_noisy_points(id_from, id_to, noise=5):
     pts2 = points[id_from][id_to][1]
     # add noise to corresponding point pairs
     rand1 = np.random.randint(-noise, noise, size=pts1.shape)
-    rand2 =
+    rand2 = np.random.randint(-noise, noise, size=pts2.shape)
+    pts1_n = check_limits(pts1 + rand1, img1.shape)
+    pts2_n = check_limits(pts2 + rand2, img2.shape)
+    # warp image using original data
+    H = computeH(pts1, pts2)
+    warped, _ = blend_images(img1, img2, H)
+    matched = match_points(img1, img2, pts1, pts2, hstack=

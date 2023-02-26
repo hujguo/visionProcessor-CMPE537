@@ -838,4 +838,12 @@ def task_noisy_points(id_from, id_to, noise=5):
     # compare and save the results
     fig = show_warp_and_match(warped, matched)
     fig.suptitle('Original')
-    fig_n = s
+    fig_n = show_warp_and_match(warped_n, matched_n)
+    fig_n.suptitle('Noisy Points')
+    os.makedirs(RESDIR, exist_ok=True)
+    save_figure(fig, 'noisy-original_%d-%d' % (id_from, id_to))
+    save_figure(fig_n, 'noisy-added-%d_%d-%d' % (noise, id_from, id_to))
+    plt.show()
+
+def task_normalized_points(id_from, id_to):
+    # load data

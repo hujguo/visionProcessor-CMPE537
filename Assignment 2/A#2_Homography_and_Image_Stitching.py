@@ -847,3 +847,13 @@ def task_noisy_points(id_from, id_to, noise=5):
 
 def task_normalized_points(id_from, id_to):
     # load data
+    dataset = 'paris'
+    print('Running task_normalized_points for %s dataset' % dataset)
+    print('Stitching from #%d to #%d' % (id_from, id_to))
+    imgs = read_imgs(dataset)
+    points = load_points(dataset)
+    img1 = imgs[id_from]
+    img2 = imgs[id_to]
+    pts1 = points[id_from][id_to][0]
+    pts2 = points[id_from][id_to][1]
+ 

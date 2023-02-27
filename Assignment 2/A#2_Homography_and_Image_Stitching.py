@@ -856,4 +856,11 @@ def task_normalized_points(id_from, id_to):
     img2 = imgs[id_to]
     pts1 = points[id_from][id_to][0]
     pts2 = points[id_from][id_to][1]
- 
+    # normalize the points
+    mean1 = np.mean(pts1, axis=0)
+    var1 = pts1 - mean1
+    coef1 = np.sqrt(2) / np.mean(np.sqrt(np.sum(np.square(var1), axis=1)))
+    pts1_n = coef1 * var1   # average distance: sqrt(2)
+    mean2 = np.mean(pts2, axis=0)
+    var2 = pts2 - mean2
+    coef2 = np.sqrt(2) / np.mean(np.sqrt(np.sum(np.

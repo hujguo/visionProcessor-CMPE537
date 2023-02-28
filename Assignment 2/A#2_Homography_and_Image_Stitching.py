@@ -863,4 +863,9 @@ def task_normalized_points(id_from, id_to):
     pts1_n = coef1 * var1   # average distance: sqrt(2)
     mean2 = np.mean(pts2, axis=0)
     var2 = pts2 - mean2
-    coef2 = np.sqrt(2) / np.mean(np.sqrt(np.sum(np.
+    coef2 = np.sqrt(2) / np.mean(np.sqrt(np.sum(np.square(var2), axis=1)))
+    pts2_n = coef2 * var2   # average distance: sqrt(2)
+    # calculate the effects of normalization on homography matrix
+    # C2 * T2 * pts2 = H_n * C1 * T1 * pts1
+    T1 = np.array([[1, 0, -mean1[0]], [0, 1, -mean1[1]], [0, 0, 1]])
+    C1 = np.array([[coef1, 0, 0], [0, coef1, 0], [0, 0, 1]])

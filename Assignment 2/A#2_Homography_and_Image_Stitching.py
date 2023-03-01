@@ -869,3 +869,9 @@ def task_normalized_points(id_from, id_to):
     # C2 * T2 * pts2 = H_n * C1 * T1 * pts1
     T1 = np.array([[1, 0, -mean1[0]], [0, 1, -mean1[1]], [0, 0, 1]])
     C1 = np.array([[coef1, 0, 0], [0, coef1, 0], [0, 0, 1]])
+    H_n = computeH(pts1_n, pts2_n, inlier_thr=0.1)
+    T2 = np.array([[1, 0, -mean2[0]], [0, 1, -mean2[1]], [0, 0, 1]])
+    C2 = np.array([[coef2, 0, 0], [0, coef2, 0], [0, 0, 1]])
+    H_n_eff = np.linalg.inv(C2.dot(T2)).dot(H_n.dot(C1.dot(T1)))
+    # warp image
+    H = computeH(pts1, p

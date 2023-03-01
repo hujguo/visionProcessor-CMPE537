@@ -874,4 +874,13 @@ def task_normalized_points(id_from, id_to):
     C2 = np.array([[coef2, 0, 0], [0, coef2, 0], [0, 0, 1]])
     H_n_eff = np.linalg.inv(C2.dot(T2)).dot(H_n.dot(C1.dot(T1)))
     # warp image
-    H = computeH(pts1, p
+    H = computeH(pts1, pts2)
+    warped, _ = blend_images(img1, img2, H)
+    warped_n, _ = blend_images(img1, img2, H_n_eff)
+    # compare and save the results
+    plt.imshow(warped)
+    plt.title('Original Warping Result')
+    plt.figure()
+    plt.imshow(warped_n)
+    plt.title('Normalized Points Warping Result')
+    pl

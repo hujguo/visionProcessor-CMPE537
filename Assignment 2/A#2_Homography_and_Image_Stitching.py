@@ -883,4 +883,9 @@ def task_normalized_points(id_from, id_to):
     plt.figure()
     plt.imshow(warped_n)
     plt.title('Normalized Points Warping Result')
-    pl
+    plt.show()
+    save_image('normalized-original_%d-%d' % (id_from, id_to), warped)
+    save_image('normalized-result_%d-%d' % (id_from, id_to), warped_n)
+
+################################################################################
+# main Homography and Image Stitching                      

@@ -888,4 +888,11 @@ def task_normalized_points(id_from, id_to):
     save_image('normalized-result_%d-%d' % (id_from, id_to), warped_n)
 
 ################################################################################
-# main Homography and Image Stitching                      
+# main Homography and Image Stitching                                          #
+################################################################################
+
+if __name__ == '__main__':
+    #test_save_points('book')
+    test_check_points('book', h_use_cv=False, w_use_cv=False)
+    test_image_pair('cmpe_building', 4, 0, den=1, w_use_cv=False)
+    test_stitch_all('cmpe_building', den=

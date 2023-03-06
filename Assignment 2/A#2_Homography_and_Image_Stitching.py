@@ -895,4 +895,13 @@ if __name__ == '__main__':
     #test_save_points('book')
     test_check_points('book', h_use_cv=False, w_use_cv=False)
     test_image_pair('cmpe_building', 4, 0, den=1, w_use_cv=False)
-    test_stitch_all('cmpe_building', den=
+    test_stitch_all('cmpe_building', den=1)
+
+    task_mosaic_paris()
+    task_mosaic_5('cmpe_building', 'left-to-right')
+    task_mosaic_5('cmpe_building', 'middle-out')
+    task_mosaic_5('cmpe_building', 'first-out-then-middle')
+    task_mosaic_5('north_campus', 'first-out-then-middle', den=2)
+
+    id_from, id_to = 2, 1   # available: (0, 1, 2)
+    tas

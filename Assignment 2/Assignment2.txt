@@ -1,0 +1,2 @@
+Assignment 2 - Homography and Image Stitching
+In this assignment, your task is to implement an image stitching method in order t

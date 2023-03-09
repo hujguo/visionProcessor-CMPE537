@@ -904,4 +904,7 @@ if __name__ == '__main__':
     task_mosaic_5('north_campus', 'first-out-then-middle', den=2)
 
     id_from, id_to = 2, 1   # available: (0, 1, 2)
-    tas
+    task_corresponding_pairs(id_from, id_to, K=8)
+    task_point_selection(id_from, id_to, wrong=5)
+    task_noisy_points(id_from, id_to, noise=5)
+    task_normalized_points(id_from, id_to)

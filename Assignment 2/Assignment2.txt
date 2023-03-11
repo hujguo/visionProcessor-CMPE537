@@ -1,2 +1,13 @@
 Assignment 2 - Homography and Image Stitching
-In this assignment, your task is to implement an image stitching method in order t
+In this assignment, your task is to implement an image stitching method in order to create a single panoramic image by computing homography and blending multiple corresponding pictures (examples are shown in below). You will use python3 to implement this assignment.
+
+Images
+You are going to work on 3 different image sets: Paris, North Campus and CMPE Building
+
+1. Paris (3 Images)
+Paris
+
+
+
+
+2. N

@@ -10,4 +10,17 @@ Paris
 
 
 
-2. N
+2. North Campus (5 Images)
+North Campus
+
+
+
+
+3. CMPE Building (5 Images)
+cmpe_building
+
+Image Stitching
+For the assignment, you will have to follow several steps to stitch images.
+
+1. Selecting corresponding points
+In order to stitch two images successfully, first you will need a

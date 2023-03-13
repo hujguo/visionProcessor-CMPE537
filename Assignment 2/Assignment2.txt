@@ -25,4 +25,9 @@ For the assignment, you will have to follow several steps to stitch images.
 1. Selecting corresponding points
 In order to stitch two images successfully, first you will need a good selection of corresponding points between your input images. For this purpose, you are allowed to use ginput function (under matplotlib.pyplot) which will operate on images and provide you to select these point pairs (x,y) with mouse clicks. You can use any other function if you know a good replacement as well.
 
-Also, keep in mind that you are going to try out different correpondence point configurations. Thus, you don't want to waste too much time marking points. Mark lots of corresponding point pairs for each of the images sets, write it to a file and use it in your main code (you can use numpy.save and numpy.lo
+Also, keep in mind that you are going to try out different correpondence point configurations. Thus, you don't want to waste too much time marking points. Mark lots of corresponding point pairs for each of the images sets, write it to a file and use it in your main code (you can use numpy.save and numpy.load for this process).
+
+Important Note: Using any automated interest point detecting functionality such as SIFT, SURF or Harris is forbidden.
+
+2. Homography estimation
+Write a function that can calculate the homogpraphy matrix between two images using the corresponding point pairs which were selected 

@@ -30,4 +30,13 @@ Also, keep in mind that you are going to try out different correpondence point c
 Important Note: Using any automated interest point detecting functionality such as SIFT, SURF or Harris is forbidden.
 
 2. Homography estimation
-Write a function that can calculate the homogpraphy matrix between two images using the corresponding point pairs which were selected 
+Write a function that can calculate the homogpraphy matrix between two images using the corresponding point pairs which were selected before. For your solution, the signature of this function should be:
+
+homography = computeH(points_im1, points_im2)
+
+points_im1 and points_im2 are the matrices which consists of corresponding point pairs. 
+
+To calculate the homography, you are allowed to use svd function (in numpy.linalg).
+
+3. Image warping
+After you have 

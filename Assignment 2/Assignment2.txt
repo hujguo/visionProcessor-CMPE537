@@ -39,4 +39,8 @@ points_im1 and points_im2 are the matrices which consists of corresponding point
 To calculate the homography, you are allowed to use svd function (in numpy.linalg).
 
 3. Image warping
-After you have 
+After you have successfully estimated the homography between two images, you should be able to warp these images using backward transform. For your solution, the signature of this function should be:
+
+image_warped = warp(image, homography)
+
+For this step, you have write your own warping function. You are not allowed to

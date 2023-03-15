@@ -43,4 +43,7 @@ After you have successfully estimated the homography between two images, you sho
 
 image_warped = warp(image, homography)
 
-For this step, you have write your own warping function. You are not allowed to
+For this step, you have write your own warping function. You are not allowed to use any functionality such as PIL.imtransform. However, you can use any interpolation function (in numpy, scipy and opencv) to interpolate the results of backward transform (you will need this process at some point in your solution).
+
+4. Blending images
+Once you have the warped images, you can merge them into a single panoramic/

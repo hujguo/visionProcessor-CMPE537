@@ -49,4 +49,11 @@ For this step, you have write your own warping function. You are not allowed to 
 Once you have the warped images, you can merge them into a single panoramic/mosaic/stitched image. If you directly put images on top of each other, every pixel you write will overwrite pixels of the previous image. Hence, you can use the image pixel that has the maximum intensity for overlapping areas.
 
 Tasks
-To see the effects of the base image stitching (mosaicing) process, you wil
+To see the effects of the base image stitching (mosaicing) process, you will work on several tasks using these image sets that are shown above.
+
+1. Stitch 3 images of Paris by taking the paris_b image as the base image.
+
+2. Stitch 5 images of North Campus and CMPE Building using methods;
+
+left-to-right
+Stitch left_2 and left_1 by taking left_2 as base image (call the result mo

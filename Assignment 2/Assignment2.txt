@@ -56,4 +56,7 @@ To see the effects of the base image stitching (mosaicing) process, you will wor
 2. Stitch 5 images of North Campus and CMPE Building using methods;
 
 left-to-right
-Stitch left_2 and left_1 by taking left_2 as base image (call the result mo
+Stitch left_2 and left_1 by taking left_2 as base image (call the result mosaic_1)
+Then stitch mosaic_1 and middle by taking mosaic_1 as base image (call the result mosaic_2)
+Then stitch mosaic_2 and right_1 by taking mosaic_2 as base image (call the result mosaic_3)
+Then stitch mosaic_3 and right_2 by taking mosaic_3 as base image (call the result mo

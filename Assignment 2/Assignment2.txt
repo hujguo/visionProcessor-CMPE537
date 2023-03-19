@@ -68,4 +68,10 @@ Stitch left_1 and left_2 by taking left_1 as base image (call the result mosaic_
 Stitch right_1 and right_2 by taking right_1 as base image (call the result mosaic_right)
 Stitch mosaic_left and mosaic_right by taking middle as base image (call the result mosaic_final)
 Effects of Corresponding Points
-For this part of the assignment, you will examine the effects of different corresponding points (number, selection, n
+For this part of the assignment, you will examine the effects of different corresponding points (number, selection, noise and normalization). In order to see these effects, you will only use the Paris image set (you don't have to experiment on all image sets).
+
+Number of corresponding point pairs
+Use only 5 corresponding point pairs
+Use 8+ correpondence point pairs (maximum 15 points will suffice)
+Point selection
+Add at le

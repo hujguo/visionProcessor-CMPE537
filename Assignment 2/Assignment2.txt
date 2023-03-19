@@ -65,4 +65,7 @@ Stitch left_1 and right_1 by taking middle as base image (call the result mosaic
 Stitch left_2 and right_2 by taking mosaic_1 as base image (call the result mosaic_final)
 first-out-then-middle
 Stitch left_1 and left_2 by taking left_1 as base image (call the result mosaic_left)
-Stitch right_1 and right
+Stitch right_1 and right_2 by taking right_1 as base image (call the result mosaic_right)
+Stitch mosaic_left and mosaic_right by taking middle as base image (call the result mosaic_final)
+Effects of Corresponding Points
+For this part of the assignment, you will examine the effects of different corresponding points (number, selection, n

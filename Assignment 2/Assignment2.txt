@@ -74,4 +74,8 @@ Number of corresponding point pairs
 Use only 5 corresponding point pairs
 Use 8+ correpondence point pairs (maximum 15 points will suffice)
 Point selection
-Add at le
+Add at least 5 wrong corresponding point matches to points that you have selected correctly.
+Noisy Points
+Add pixel noise to your corresponding point pairs. Experiment on different variances (keep variance in a reasonable range, it shouldn't be too high or too low)
+Normalize corresponding point pairs
+Normalize all

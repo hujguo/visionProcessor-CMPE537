@@ -81,4 +81,8 @@ Normalize corresponding point pairs
 Normalize all points before calculating the homography by the process below;
 Move the average to (0,0) and make the average length 2�? for corresponding points of each image separately. 
 Note: When we apply normalization to the point pairs of first image, we effectively apply a transformation T to the points. However, we apply a different transformation for the second image T'. Let the homography between the normalized points be H'. Then, calculation becomes T'x'=H'Tx.
-For each effect, comment on what can be done differently to obtain a good selection of points. How would you d
+For each effect, comment on what can be done differently to obtain a good selection of points. How would you decide if a set of points is sufficient enough to perform the stitching process successfully and efficiently?
+
+Bonus
+Implementing better and clever blending techniques will be rewarded. Comment on what can we done additionally to improve the quality of stitched images.
+Try to avoid using for loops while w

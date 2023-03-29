@@ -85,4 +85,7 @@ For each effect, comment on what can be done differently to obtain a good select
 
 Bonus
 Implementing better and clever blending techniques will be rewarded. Comment on what can we done additionally to improve the quality of stitched images.
-Try to avoid using for loops while w
+Try to avoid using for loops while writing your code. Vectorized codes will be rewarded.
+Reports written in LaTeX will be rewarded additional points.  Also, attach the required *.tex files to your submission.
+Deliverables
+Project report (.pdf & .tex): Given the tasks above, describe what you have implemented and experimented on. Comment on the effects of co

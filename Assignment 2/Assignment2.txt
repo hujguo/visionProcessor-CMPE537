@@ -88,4 +88,5 @@ Implementing better and clever blending techniques will be rewarded. Comment on 
 Try to avoid using for loops while writing your code. Vectorized codes will be rewarded.
 Reports written in LaTeX will be rewarded additional points.  Also, attach the required *.tex files to your submission.
 Deliverables
-Project report (.pdf & .tex): Given the tasks above, describe what you have implemented and experimented on. Comment on the effects of co
+Project report (.pdf & .tex): Given the tasks above, describe what you have implemented and experimented on. Comment on the effects of corresponding points. Why did they produce such results? Include resulting images in to your report and comment on them. 
+Source codes (.py files): Do not print the source codes or include them into your report. Code files should be submitted separately. Reproducibility of your code is also important. If you use JupyterNotebo

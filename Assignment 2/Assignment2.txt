@@ -90,4 +90,6 @@ Reports written in LaTeX will be rewarded additional points.  Also, attach the r
 Deliverables
 Project report (.pdf & .tex): Given the tasks above, describe what you have implemented and experimented on. Comment on the effects of corresponding points. Why did they produce such results? Include resulting images in to your report and comment on them. 
 Source codes (.py files): Do not print the source codes or include them into your report. Code files should be submitted separately. Reproducibility of your code is also important. If you use JupyterNotebook in your assignment, please include a main .py file along with it in your submission as well (consist of functionality wanted above).
-Stitched images (.jpg or .png): Provide stitched image of given pictures and the ones you have shot. Since the stitching operating may produc
+Stitched images (.jpg or .png): Provide stitched image of given pictures and the ones you have shot. Since the stitching operating may produce images with high resolution, you can compress (or resize them) before you put them into your submisssions.
+Corresponding point pairs (.npy file): Provide the point pairs that you have selected only for the Paris image set.
+WARNING! Submit all files as one zip file. Please send files in correct form

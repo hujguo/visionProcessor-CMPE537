@@ -17,4 +17,11 @@ class KNN:
         return self
     def predict(self, X_test):
         y_predict = np.zeros((X_test.shape[0],))
-        for i, x 
+        for i, x in enumerate(X_test):
+            # distance between the histogram and all cluster
+            norms = np.linalg.norm(self.X - x, axis=1)
+            # minimum k indices
+            idx = np.argpartition(norms, self.k)[:self.k]
+            # minimum k distances
+            dists = norms[idx]
+            # co

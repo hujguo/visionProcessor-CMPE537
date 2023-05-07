@@ -56,4 +56,11 @@ def TrainClassifier(classifier_name, parameters, X, y):
     elif classifier_name == 'KNN':
         k = parameters[0]
         model = KNN(k)
-       
+        # to use the external library
+        # https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html
+        # from sklearn.neighbors import KNeighborsClassifier
+        # model = KNeighborsClassifier(n_neighbors=k)
+        return model.fit(X, y)
+
+    else:
+        raise Ex

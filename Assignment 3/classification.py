@@ -24,4 +24,12 @@ class KNN:
             idx = np.argpartition(norms, self.k)[:self.k]
             # minimum k distances
             dists = norms[idx]
-            # co
+            # corresponding labels
+            labels = self.y[idx]
+            values, counts = np.unique(labels, return_counts=True)
+            # maximum occuring labels
+            occurs = values[counts == np.max(counts)]
+            if len(occurs) == 1:
+                y_predict[i] = occurs[0]
+            else:
+                # multipl

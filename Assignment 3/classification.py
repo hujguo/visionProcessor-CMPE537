@@ -32,4 +32,10 @@ class KNN:
             if len(occurs) == 1:
                 y_predict[i] = occurs[0]
             else:
-                # multipl
+                # multiple labels are candidate for being the closest k
+                # choose the one with minimum distance
+                mask = np.isin(labels, occurs)
+                y_predict[i] = labels[mask][np.argmin(dists[mask])]
+        return y_predict
+
+def TrainClassifier(classifier_name, paramet

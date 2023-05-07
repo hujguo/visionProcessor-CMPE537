@@ -47,4 +47,13 @@ def TrainClassifier(classifier_name, parameters, X, y):
         return model.fit(X,y)
 
     elif classifier_name == 'MLP':
-        layers = parame
+        layers = parameters[0]
+        lr = parameters[1]
+        # https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html
+        model = MLPClassifier(hidden_layer_sizes = layers, learning_rate = lr)
+        return model.fit(X,y)
+
+    elif classifier_name == 'KNN':
+        k = parameters[0]
+        model = KNN(k)
+       

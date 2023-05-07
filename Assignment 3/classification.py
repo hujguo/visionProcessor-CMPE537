@@ -38,4 +38,13 @@ class KNN:
                 y_predict[i] = labels[mask][np.argmin(dists[mask])]
         return y_predict
 
-def TrainClassifier(classifier_name, paramet
+def TrainClassifier(classifier_name, parameters, X, y):
+
+    if classifier_name == 'SVM':
+        c = parameters[0]
+        # https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html
+        model = SVC(C=c, kernel='linear', class_weight='balanced')
+        return model.fit(X,y)
+
+    elif classifier_name == 'MLP':
+        layers = parame

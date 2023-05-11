@@ -77,3 +77,12 @@ def TestClassifier(classifier_name, model, X_test):
         return model.predict(X_test)
 
     else:
+        raise Exception('Invalid option')
+
+def func_compute_histograms(impath, indices, descriptor, quantizer, X, y):
+    taxon_id, img_id = indices
+    img = cv.imread(impath)
+    assert img is not None
+    hist = get_hist(img, descriptor, quantizer)
+    if hist is None:
+  

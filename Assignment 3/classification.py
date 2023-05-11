@@ -63,4 +63,17 @@ def TrainClassifier(classifier_name, parameters, X, y):
         return model.fit(X, y)
 
     else:
-        raise Ex
+        raise Exception('Invalid option')
+
+def TestClassifier(classifier_name, model, X_test):
+
+    if classifier_name == 'SVM':
+        return model.predict(X_test)
+
+    elif classifier_name == 'MLP':
+        return model.predict(X_test)
+
+    elif classifier_name == 'KNN':
+        return model.predict(X_test)
+
+    else:

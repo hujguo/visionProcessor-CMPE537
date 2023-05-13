@@ -85,4 +85,15 @@ def func_compute_histograms(impath, indices, descriptor, quantizer, X, y):
     assert img is not None
     hist = get_hist(img, descriptor, quantizer)
     if hist is None:
-  
+        return
+    X.append(hist)
+    y.append(taxon_id)
+
+if __name__ == '__main__':
+    import imgops
+    from timeit import default_timer as timer
+
+    """from descriptors import get_descriptor
+    from quantization import get_quantizer
+    from dictionary import get_dictionary
+    # parameters

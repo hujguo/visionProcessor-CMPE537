@@ -97,3 +97,13 @@ if __name__ == '__main__':
     from quantization import get_quantizer
     from dictionary import get_dictionary
     # parameters
+    quantname = 'BOW'
+    dictname = 'BOW'
+    num_cluster = 100
+    descname = 'SIFT'
+    desc_per_img = 20
+    # initialize objects
+    quants = imgops.load_quants(quantname, dictname, num_cluster,
+                                descname, desc_per_img)
+    descriptor = get_descriptor(descname)
+    quantizer = get_quantizer(q

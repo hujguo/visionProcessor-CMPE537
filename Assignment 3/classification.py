@@ -114,4 +114,14 @@ if __name__ == '__main__':
     X = []
     y = []
     imgops.loop_images(func_compute_histograms, (descriptor, quantizer, X, y))
- 
+    X = np.vstack(X)
+    end = timer()
+    # print and save the results
+    print('Computing histograms took %.1f seconds' % (end - start))
+    print('X:', X.shape)
+    imgops.save_array('X', X)
+    imgops.save_array('y', y)"""
+
+    X = np.load(imgops.NPYDIR + 'X.npy')
+    y = np.load(imgops.NPYDIR + 'y.npy')
+   

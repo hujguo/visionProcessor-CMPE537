@@ -106,4 +106,12 @@ if __name__ == '__main__':
     quants = imgops.load_quants(quantname, dictname, num_cluster,
                                 descname, desc_per_img)
     descriptor = get_descriptor(descname)
-    quantizer = get_quantizer(q
+    quantizer = get_quantizer(quantname, descriptor)
+    vocab = imgops.load_vocab(dictname, num_cluster, descname, desc_per_img)
+    quantizer.setVocabulary(vocab)
+    # obtain histogram of each train image
+    start = timer()
+    X = []
+    y = []
+    imgops.loop_images(func_compute_histograms, (descriptor, quantizer, X, y))
+ 

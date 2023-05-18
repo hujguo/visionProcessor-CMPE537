@@ -132,4 +132,12 @@ if __name__ == '__main__':
     # train the classifier
     start = timer()
     model = TrainClassifier(classifier_name, parameters, X, y)
-    end
+    end = timer()
+    print('Train took %.1f seconds' % (end - start))
+    # test the classifier
+    start = timer()
+    predict = TestClassifier(classifier_name, model, X_test)
+    end = timer()
+    # print results
+    print('Self test took %.1f seconds' % (end - start))
+    accuracy = np.count_nonzero(predict == y) /

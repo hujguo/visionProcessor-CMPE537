@@ -140,4 +140,5 @@ if __name__ == '__main__':
     end = timer()
     # print results
     print('Self test took %.1f seconds' % (end - start))
-    accuracy = np.count_nonzero(predict == y) /
+    accuracy = np.count_nonzero(predict == y) / len(y)
+    print('accuracy: %.1f%%' % (100 * accuracy))

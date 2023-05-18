@@ -11,4 +11,12 @@ class HOG:
         grid_dim = int(resize[0]/grid_size[0])
 
         # Resize the image to a fixed size:
-        image = 
+        image = cv.resize(image,resize)
+
+        # Convert the BGR to grayscale format:
+        image = cv.cvtColor(image,cv.COLOR_BGR2GRAY)
+
+        # Create an empty array for the descriptor with proper dimensions:
+        hist = np.zeros((grid_size[0]*grid_size[1] , num_of_bins))
+
+        # Calculate the gradients in x an

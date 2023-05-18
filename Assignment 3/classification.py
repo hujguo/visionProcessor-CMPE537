@@ -124,4 +124,12 @@ if __name__ == '__main__':
 
     X = np.load(imgops.NPYDIR + 'X.npy')
     y = np.load(imgops.NPYDIR + 'y.npy')
-   
+    X_test = X
+    # classification parameters
+    classifier_name, parameters = 'SVM', [1.0]
+    classifier_name, parameters = 'MLP', [100, 'constant']
+    classifier_name, parameters = 'KNN', [5]
+    # train the classifier
+    start = timer()
+    model = TrainClassifier(classifier_name, parameters, X, y)
+    end

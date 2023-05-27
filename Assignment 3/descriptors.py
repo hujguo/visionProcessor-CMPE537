@@ -19,4 +19,9 @@ class HOG:
         # Create an empty array for the descriptor with proper dimensions:
         hist = np.zeros((grid_size[0]*grid_size[1] , num_of_bins))
 
-        # Calculate the gradients in x an
+        # Calculate the gradients in x and y axis:
+        Gradx = cv.Sobel(image,cv.CV_32F,1,0,ksize=3) # By using cv2.CV_32F, gradient of each pixel will be 32-bit floating numbers
+        Grady = cv.Sobel(image,cv.CV_32F,0,1,ksize=3)
+
+        # Find the angles between the gradients in radians:
+        GradRadian = np.arctan2(Grady,Gradx) # Each element is betw

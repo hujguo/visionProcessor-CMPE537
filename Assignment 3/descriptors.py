@@ -30,4 +30,11 @@ class HOG:
         dummy_kps = np.zeros((grid_size[0]*grid_size[1],2))
 
         # Scan the image by the windows and find the histogram of each window. Then, concatenate them column wise:
-        for i in 
+        for i in range(grid_size[0]):
+            for j in range(grid_size[1]):
+
+                dummy_kps[i*grid_size[0]+j,0] = i*grid_dim + grid_dim/2
+                dummy_kps[i*grid_size[0]+j,1] = j*grid_dim + grid_dim/2
+
+                # Create a mask that has the same size with images. The mask will be dark (0) in all areas except the
+                # de

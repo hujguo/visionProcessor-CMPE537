@@ -24,4 +24,10 @@ class HOG:
         Grady = cv.Sobel(image,cv.CV_32F,0,1,ksize=3)
 
         # Find the angles between the gradients in radians:
-        GradRadian = np.arctan2(Grady,Gradx) # Each element is betw
+        GradRadian = np.arctan2(Grady,Gradx) # Each element is between -3.14 and 3.14
+
+        # Create an array that contains centers of grids (dummy keypoints):
+        dummy_kps = np.zeros((grid_size[0]*grid_size[1],2))
+
+        # Scan the image by the windows and find the histogram of each window. Then, concatenate them column wise:
+        for i in 

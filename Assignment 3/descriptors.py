@@ -37,4 +37,8 @@ class HOG:
                 dummy_kps[i*grid_size[0]+j,1] = j*grid_dim + grid_dim/2
 
                 # Create a mask that has the same size with images. The mask will be dark (0) in all areas except the
-                # de
+                # desired window location. Window will be white (255).
+                mask = np.zeros(resize, np.uint8)
+                mask[int(i*(resize[0]/grid_size[0])) : int((i+1)*(resize[0]/grid_size[0])), int(j*(resize[1]/grid_size[1])) : int((j+1)*(resize[1]/grid_size[1]))] = 255
+
+            

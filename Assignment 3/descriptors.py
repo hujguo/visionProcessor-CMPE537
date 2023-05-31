@@ -41,4 +41,8 @@ class HOG:
                 mask = np.zeros(resize, np.uint8)
                 mask[int(i*(resize[0]/grid_size[0])) : int((i+1)*(resize[0]/grid_size[0])), int(j*(resize[1]/grid_size[1])) : int((j+1)*(resize[1]/grid_size[1]))] = 255
 
-            
+                # Find the L1 norm histograms of each window:
+                hist_window = cv.calcHist([GradRadian],[0],mask,[num_of_bins],[-np.pi,np.pi])
+                hist_window = hist_window / np.sum(np.abs(hist_window)) # Divide the histogram array by its L1 norm, so it adds up to 1.
+
+                # Add the histogram of current cell to

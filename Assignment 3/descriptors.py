@@ -55,4 +55,15 @@ def get_descriptor(descname):
     # https://docs.opencv.org/3.4/d0/d13/classcv_1_1Feature2D.html
     if descname == 'SIFT':
         return cv.xfeatures2d.SIFT_create()
-    elif descna
+    elif descname == 'SURF':
+        return cv.xfeatures2d.SURF_create()
+    elif descname == 'ORB':
+        return cv.ORB_create()
+    elif descname == 'HOG':
+        return HOG()
+    else:
+        raise Exception('Invalid option')
+
+def features_in_dir(descriptor, directory, print_progress=False):
+    features  = []
+   

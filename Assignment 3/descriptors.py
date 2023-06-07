@@ -66,4 +66,10 @@ def get_descriptor(descname):
 
 def features_in_dir(descriptor, directory, print_progress=False):
     features  = []
-   
+    imnames = os.listdir(directory)
+    for i, imname in enumerate(imnames, start=1):
+        if print_progress:
+            print('[%d/%d] Reading %s' % (i, len(imnames), imname))
+        impath = os.path.join(directory, imname)
+        img = cv.imread(impath)
+        asse

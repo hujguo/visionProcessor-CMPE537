@@ -72,4 +72,13 @@ def features_in_dir(descriptor, directory, print_progress=False):
             print('[%d/%d] Reading %s' % (i, len(imnames), imname))
         impath = os.path.join(directory, imname)
         img = cv.imread(impath)
-        asse
+        assert img is not None, 'Could not open image %s' % (impath)
+        feature = descriptor.detectAndCompute(img, None)
+        features.append(feature)
+    return features
+
+if __name__ == '__main__':
+    import imgops
+    # parameters
+    descname = 'SIFT'
+    imname = 'Dataset/Caltech20/training/airpl

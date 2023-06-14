@@ -81,4 +81,13 @@ if __name__ == '__main__':
     import imgops
     # parameters
     descname = 'SIFT'
-    imname = 'Dataset/Caltech20/training/airpl
+    imname = 'Dataset/Caltech20/training/airplanes/image_0001.jpg'
+    # read an image
+    img = cv.imread(imname)
+    assert img is not None
+    # choose a descriptor and find keypoints
+    descriptor = get_descriptor(descname)
+    kps, desc = descriptor.detectAndCompute(img, None)
+    # display the results
+    print('descriptors:', desc.shape)
+    pri

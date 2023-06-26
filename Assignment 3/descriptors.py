@@ -90,4 +90,6 @@ if __name__ == '__main__':
     kps, desc = descriptor.detectAndCompute(img, None)
     # display the results
     print('descriptors:', desc.shape)
-    pri
+    print(desc)
+    disp_img = cv.drawKeypoints(img, kps, None)
+    imgops.plt_imshow(disp_img)

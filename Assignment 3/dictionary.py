@@ -13,4 +13,16 @@ def func_add_descriptors(impath, indices, dictionary, descriptor, desc_per_img=2
     img = cv.imread(impath)
     assert img is not None
     _, desc = descriptor.detectAndCompute(img, None)
- 
+    if desc is None:
+        return
+    np.random.shuffle(desc)
+    desc = desc[0:desc_per_img, :]
+    dictionary.add(desc)
+
+if __name__ == '__main__':
+    from descriptors import get_descriptor
+    import imgops
+    from timeit import default_timer as timer
+    # parameters
+    dictname = 'BOW'
+    num

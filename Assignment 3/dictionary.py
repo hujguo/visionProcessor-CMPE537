@@ -25,4 +25,13 @@ if __name__ == '__main__':
     from timeit import default_timer as timer
     # parameters
     dictname = 'BOW'
-    num
+    num_cluster = 100
+    descname = 'SIFT'
+    desc_per_img = 20
+    # initialize objects
+    dictionary = get_dictionary(dictname, num_cluster)
+    descriptor = get_descriptor(descname)
+    # collect descriptors
+    # descriptors should be independent from dictionary
+    start = timer()
+    imgops.loop

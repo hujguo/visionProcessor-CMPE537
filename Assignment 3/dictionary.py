@@ -34,4 +34,11 @@ if __name__ == '__main__':
     # collect descriptors
     # descriptors should be independent from dictionary
     start = timer()
-    imgops.loop
+    imgops.loop_images(func_add_descriptors, (dictionary, descriptor, desc_per_img))
+    descs = np.vstack(dictionary.getDescriptors())
+    end = timer()
+    # print and save the results
+    print('Collecting descriptors took %.1f seconds' % (end - start))
+    print('descriptors:', descs.shape)
+    name = 'descs_%s_%d' % (descname, desc_per_img)
+  

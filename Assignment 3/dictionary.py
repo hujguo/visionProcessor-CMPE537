@@ -41,4 +41,12 @@ if __name__ == '__main__':
     print('Collecting descriptors took %.1f seconds' % (end - start))
     print('descriptors:', descs.shape)
     name = 'descs_%s_%d' % (descname, desc_per_img)
-  
+    imgops.save_array(name, descs)
+    # obtain the vocabulary
+    #descs = imgops.load_descs(descname, desc_per_img)
+    start = timer()
+    vocab = dictionary.cluster(descs)
+    end =  timer()
+    # print and save the results
+    print('Clustering took %.1f seconds' % (end - start))
+    pr

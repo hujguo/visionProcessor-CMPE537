@@ -49,4 +49,7 @@ if __name__ == '__main__':
     end =  timer()
     # print and save the results
     print('Clustering took %.1f seconds' % (end - start))
-    pr
+    print('vocabulary:', vocab.shape)
+    name = 'vocab_%s_%d_%s_%d' % (dictname, num_cluster, descname, desc_per_img)
+    imgops.save_array(name, vocab)
+    #vocab = imgops.load_vocab(dictname, num_cluster, descname, desc_per_img)

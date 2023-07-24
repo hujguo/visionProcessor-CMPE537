@@ -6,4 +6,4 @@ def Scores(y_test, y_predict):
     MeanF1 = np.mean(F1)
     conf_matrix = multilabel_confusion_matrix(y_test, y_predict)
 
-    return 
+    return MeanF1, precision, recall, F1, conf_matrix

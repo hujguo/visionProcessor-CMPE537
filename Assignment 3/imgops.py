@@ -24,4 +24,12 @@ def loop_images(func,   # function to be called on each image
         for i_i, imname in enumerate(imnames, start=1):
             impath = os.path.join(taxon_path, imname)
             assert os.path.isfile(impath), 'Could not find %s' % (impath)
-  
+            if dry_run:
+                continue
+            print('[%d/%d] [%d/%d] %s %s' %
+                  (i_t, len(taxons), i_i, len(imnames), taxon, imname))
+            func(impath, (i_t, i_i), *params)
+        if dry_run:
+            print('%s has %d images' % (taxon, len(imnames)))
+    if dry_run:
+        print('dry-run fin

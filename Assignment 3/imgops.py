@@ -18,4 +18,10 @@ def loop_images(func,   # function to be called on each image
                 taxons_path='Dataset/Caltech20/training/',
                 dry_run=True):
     taxons = os.listdir(taxons_path)
-    for i_t, taxon in enumerate(taxons
+    for i_t, taxon in enumerate(taxons, start=1):
+        taxon_path = os.path.join(taxons_path, taxon)
+        imnames = os.listdir(taxon_path)
+        for i_i, imname in enumerate(imnames, start=1):
+            impath = os.path.join(taxon_path, imname)
+            assert os.path.isfile(impath), 'Could not find %s' % (impath)
+  

@@ -32,4 +32,16 @@ def loop_images(func,   # function to be called on each image
         if dry_run:
             print('%s has %d images' % (taxon, len(imnames)))
     if dry_run:
-        print('dry-run fin
+        print('dry-run finished')
+        loop_images(func, params, taxons_path, dry_run=False)
+
+NPYDIR = 'Data/'
+
+def save_array(name, array):
+    os.makedirs(NPYDIR, exist_ok=True)
+    path = NPYDIR + name + '.npy'
+    np.save(path, array)
+    print('Saved to', path)
+
+def load_descs(descname, desc_per_img):
+    name = 'de

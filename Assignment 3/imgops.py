@@ -57,4 +57,8 @@ def load_vocab(dictname, num_cluster, descname, desc_per_img):
     return arr
 
 def load_quants(quantname, dictname, num_cluster, descname, desc_per_img):
-    name = 'quants_%s_%s_%d_%s_%d'
+    name = 'quants_%s_%s_%d_%s_%d' % (quantname, dictname, num_cluster, descname, desc_per_img)
+    arr = np.load(NPYDIR + name + '.npy')
+    assert arr.size != 0, 'Could not find %s' % (name)
+    assert arr.shape[1] == num_cluster, 'Cluster size should be %d whereas it is %d' % (num_cluster, arr.shape[1])
+    return arr

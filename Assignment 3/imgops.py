@@ -44,4 +44,11 @@ def save_array(name, array):
     print('Saved to', path)
 
 def load_descs(descname, desc_per_img):
-    name = 'de
+    name = 'descs_%s_%d' % (descname, desc_per_img)
+    arr = np.load(NPYDIR + name + '.npy')
+    assert arr.size != 0, 'Could not find %s' % (name)
+    return arr
+
+def load_vocab(dictname, num_cluster, descname, desc_per_img):
+    name = 'vocab_%s_%d_%s_%d' % (dictname, num_cluster, descname, desc_per_img)
+    arr = np.loa

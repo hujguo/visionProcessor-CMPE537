@@ -25,4 +25,20 @@ Results are saved to the `Data/` folder.
   - ORB
   - CenSure
   - FAST
-  - BR
+  - BRIEF
+  - MSER
+  - Super point
+  - or others
+
+- Find the dictionary
+
+  - hierarchical K-means
+  - spectral clustering (scikit-learn)
+  - GMM (vlfeat implementation)
+  - others
+
+- Feature quantization
+
+  - Bag of visual words (own implementation)
+  - Fisher Vectors (vlfeat implementation)
+  - VLAD (vlfeat implementati

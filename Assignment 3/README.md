@@ -41,4 +41,21 @@ Results are saved to the `Data/` folder.
 
   - Bag of visual words (own implementation)
   - Fisher Vectors (vlfeat implementation)
-  - VLAD (vlfeat implementati
+  - VLAD (vlfeat implementation)
+
+- Classification
+
+  - Support Vector Machines
+  - Nearest Neighbors
+  - Random Forest
+  - Adaboost
+  - Multilayer Perceptron
+  - or others
+
+- Evaluation
+
+  - Mean F1-score (macro average over all classes)
+  - Per-class F1-score
+  - Per-class Precision
+  - Per-class Recall
+  - Multi-class Confusion Matrix
